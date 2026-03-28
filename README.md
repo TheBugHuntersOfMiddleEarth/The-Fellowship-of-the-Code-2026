@@ -17,8 +17,6 @@
 
 ## Purpose of The Fellowship Companion (TFC)
 
-*`Adapt to your project...`*
-
 We are 5 hobbits on our great journey from the Shire to Mordor. Along the way, we need a system to support **our planning, decisions, communication, and survival**.  
 The Fellowship Companion is a **evolving digital tool** we build together. It is not perfect, it is not finished - it evolves as we travel.
 
@@ -86,6 +84,4 @@ The Fellowship Companion is a **evolving digital tool** we build together. It is
 
 *`Adapt to your project...`*
 
-- X
-- Y
-- Z
+Version 0.1: setting up the repository, creating and sharing the first artifact
