@@ -2,7 +2,7 @@
 
 *`The Fellowship of the Code – A Developer's Tale`*
 
-*`LOTR Quote relevant to the assignment or artifact` `"..." - Character`*
+*"Not all those who wander are lost" - Bilbo Baggins*
 
 **Table of Contents**
 
