@@ -66,12 +66,11 @@ The Fellowship Companion is a **evolving digital tool** we build together. It is
 
 ## Key Features of The Fellowship Companion
 
-*`Adapt to your project...`*
 
-- **Journey Planning:** map tasks, flows, and deadlines  
-- **Resource Management:** track fictional "hobbit resources" (food, supplies, morale)  
-- **Decision Support:** flows and logic for key choices on the journey  
-- **Communication:** share work, reflections, and AI learnings  
+- **Journey Planning:** map, infos about surroundings  
+- **Group Status:** how is everyone?, GPS tracking of group members 
+- **Inventory Managemt** overview about stocks  
+- **Ring location:** 24/7 location tracking of the ring  
 - **Versioned & Evolving:** artifacts build on each other, tracked in The Red Book
 
 ---
