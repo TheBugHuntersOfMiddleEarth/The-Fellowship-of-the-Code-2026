@@ -2,9 +2,9 @@
 
 ## 1. Situation
 
-Wir sind eine Gruppe von 5 Hobbits und wir haben die wohl wichtigste Aufgabe überhaupt erhalten – den Ring der Macht zerstören. Vor uns liegt also eine weite Reise quer durch Mittelerde. Als wir das Auenland verlassen haben, sind wir schnell mit der brutalen Realität konfrontiert worden. Wir haben starke Gefährten, die uns gut beschützen, doch die Reise besteht nicht nur aus Kämpfen.  
+Wir sind eine Gruppe von fünf Hobbits und wir haben die wohl wichtigste Aufgabe überhaupt erhalten – den Ring der Macht zerstören. Vor uns liegt also eine weite Reise quer durch Mittelerde. Als wir das Auenland verlassen haben, sind wir schnell mit der brutalen Realität konfrontiert worden. Wir haben starke Gefährten, die uns gut beschützen, doch die Reise besteht nicht nur aus Kämpfen.  
 
-Viel wichtiger sind doch Orientierung, Informationen über die Umgebung und ein gutes Inventarmanagement.  Und hier kommt unsere Idee ins Spiel. Wir entwickeln den “Fellowship Companion”, ein magisches Tool, das uns auf unserer Reise dort unterstützen soll, wo es unsere Gefährten nicht können. Das Tool soll uns dabei helfen auf Basis vieler verfügbarer Informationen, bessere Entscheidungen treffen zu können, um eine möglichst sichere Route bis zum Schicksalsberg zu finden.  
+Viel wichtiger sind Orientierung, Informationen über die Umgebung und ein gutes Inventarmanagement.  Und hier kommt unsere Idee ins Spiel. Wir entwickeln den “Fellowship Companion”, ein magisches Tool, das uns auf unserer Reise dort unterstützen soll, wo es unsere Gefährten nicht können. Das Tool soll uns dabei helfen auf Basis vieler verfügbarer Informationen, bessere Entscheidungen treffen zu können, um eine möglichst sichere Route bis zum Schicksalsberg zu finden.  
 
 
 ## 2. Intent
@@ -49,4 +49,4 @@ Der beste Companion hilft uns nicht viel, wenn er nicht gut bedienbar ist. Die O
 Der Companion wird das magisch betrieben, kann aber nicht zaubern. Es ist also nicht möglich, dass er Gedanken liest. Ob man jederzeit allen Kameraden vertrauen kann, muss man also immer noch selbst entscheiden. Das kann zum Risiko werden je größer die Gruppe wird oder wenn der Gruppe unbekannte Personen dazustoßen, wie zum Beispiel Gollum.  
 
 ### Abhängigkeit von anderen: 
-da wir auf eine große Datenbank, die von anderen Usern gefüttert wird, als Informationsquelle setzen erzeugen wir eine gewisse Abhängigkeit. Wir sind darauf angewiesen, dass alle gute und richtige Informationen zur Verfügung stellen. Wir sollten uns also nicht immer blind auf alles verlassen, sondern die Situation dennoch selbst analysieren. Das ist nicht so schlimm, wenn das Ale in der Taverne gar nicht so gut ist, wie von anderen beschrieben, wird aber ein Problem, wenn wir auf einmal in eine Trollhöhle laufen, weil die auf der Karte nicht angezeigt wurde.  
+Da wir auf eine große Datenbank, die von anderen Usern gefüttert wird, als Informationsquelle setzen erzeugen wir eine gewisse Abhängigkeit. Wir sind darauf angewiesen, dass alle gute und richtige Informationen zur Verfügung stellen. Wir sollten uns also nicht immer blind auf alles verlassen, sondern die Situation dennoch selbst analysieren. Das ist nicht so schlimm, wenn das Ale in der Taverne gar nicht so gut ist, wie von anderen beschrieben, wird aber ein Problem, wenn wir auf einmal in eine Trollhöhle laufen, weil die auf der Karte nicht angezeigt wurde.  
