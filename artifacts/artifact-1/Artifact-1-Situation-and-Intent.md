@@ -1,5 +1,13 @@
 # The Fellowship Companion - Artifact 1: Situation & Intent
 
+**Table of Contents**
+
+- [The Fellowship Companion - Artifact 1: Situation & Intent](#the-fellowship-compantion---artifact-1-situation-&-intent)
+  - [Summary](#summary)
+  - [Artifact](#artifact)
+  - [AI Assistance](#ai-assistance)
+  - [Lessons Learned](#lessons-learned)
+
 ## 1. Situation
 
 Wir sind eine Gruppe von fünf Hobbits und wir haben die wohl wichtigste Aufgabe überhaupt erhalten – den Ring der Macht zerstören. Vor uns liegt also eine weite Reise quer durch Mittelerde. Als wir das Auenland verlassen haben, sind wir schnell mit der brutalen Realität konfrontiert worden. Wir haben starke Gefährten, die uns gut beschützen, doch die Reise besteht nicht nur aus Kämpfen.  
