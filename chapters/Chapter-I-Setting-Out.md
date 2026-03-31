@@ -33,7 +33,7 @@ Das war am Anfang alles etwas viel, aber mit Hilfe von Gandalf haben wir es dann
 
 ## Artifact
 
-**File:** [Artifact 1 - Situation & Intent](./artifacts/artifact-1/Artifact-1-Situation-and-Intent.md)
+**File:** [Artifact 1 - Situation & Intent](../artifacts/artifact-1/Artifact-1-Situation-and-Intent.md)
 
 **Build:**
 
