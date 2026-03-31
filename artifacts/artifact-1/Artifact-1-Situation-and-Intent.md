@@ -44,7 +44,7 @@ Mindestens genauso wichtig wie der Überblick über die Gruppe, ist der Überbli
 ### Ringstandort: 
 Der Ring ist das Wichtigste an unserer Mission. Daher sollten wir immer wissen, wo er sich befindet, auch wenn Frodo meint, er muss ihn anlegen und unsichtbar herumlaufen.  
 
-## 5. Assumptions & Constraints
+## Assumptions & Constraints
 
 Natürlich gibt es einige Limitierungen, die manche Features einschränken oder gar unmöglich machen könnten. Dazu gehören: 
 
