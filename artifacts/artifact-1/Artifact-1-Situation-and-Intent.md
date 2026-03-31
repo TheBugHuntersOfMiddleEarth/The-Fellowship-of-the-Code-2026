@@ -7,7 +7,7 @@
   - [Intent](#2.-intent)
   - [Value](#3.-value)
   - [System Capabilities](#4.-system-capabilities)
-  - [Assumptions & Constraints](#assumptions-&-constraints)
+  - [Assumptions & Constraints](#5-assumptions-&-constraints)
 
 ## 1. Situation
 
@@ -44,7 +44,7 @@ Mindestens genauso wichtig wie der Überblick über die Gruppe, ist der Überbli
 ### Ringstandort: 
 Der Ring ist das Wichtigste an unserer Mission. Daher sollten wir immer wissen, wo er sich befindet, auch wenn Frodo meint, er muss ihn anlegen und unsichtbar herumlaufen.  
 
-## Assumptions & Constraints
+## 5. Assumptions & Constraints
 
 Natürlich gibt es einige Limitierungen, die manche Features einschränken oder gar unmöglich machen könnten. Dazu gehören: 
 
