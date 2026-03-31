@@ -50,17 +50,17 @@ The Fellowship Companion is a **evolving digital tool** we build together. It is
 3. **Chapter III - Making It Visible**  
    *"I like less than half of you half as well as you deserve." - Bilbo*
 
-   [Go to Chapter III →](chapters/chapter-3-making-it-visible.md)
+   [Chapter III - Making It Visible](./chapters/Chapter-III-Making-It-Visible.md)
 
 4. **Chapter IV - When Things React**  
    *"Even the wise cannot see all ends." - Gandalf*
 
-   [Go to Chapter IV →](chapters/chapter-4-when-things-react.md)
+   [Chapter IV - When Things React](./chapters/Chapter-IV-When-Things-React.md)
 
 5. **Chapter V - The Tale Continues**  
    *"The tale grew in the telling." - Bilbo*
 
-   [Go to Chapter V →](chapters/chapter-5-the-tale-continues.md)
+   [Chapter V - The Tale Continues](./chapters/Chapter-V-The-Tale-Continues.md)
 
 ---
 
