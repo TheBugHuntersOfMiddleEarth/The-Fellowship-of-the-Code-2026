@@ -19,8 +19,8 @@ ich folge ihm, so gut ich kann." - Bilbo Beutlin
 
 Wir haben uns damit beschäftigt ein Konzept für unseren Fellowship Companion zu entwickeln. Dabei haben wir uns mit 5 Themen beschäftigt:
 - Ausgangssituation
-- Intent
-- Value
+- Zweck
+- Mehrwert
 - mögliche Features
 - Limitierungen
 
