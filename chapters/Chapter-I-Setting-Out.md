@@ -1,10 +1,13 @@
-# The Red Book of Westmarch - Chapter I: Situation and Intent
+# The Red Book of Westmarch - Chapter I: Setting Out
 
-*`LOTR Quote relevant to the assignment or artifact` `"..." - Character`*
+"Der Weg geht immer weiter und weiter,
+weg von der Tür, wo er begann.
+Weit über Land von Ort zu Ort,
+ich folge ihm, so gut ich kann." - Bilbo Beutlin
 
 **Table of Contents**
 
-- [The Red Book of Westmarch - Chapter X: Title](#the-red-book-of-westmarch---chapter-x-title)
+- [The Red Book of Westmarch - Chapter I: Setting Out](#the-red-book-of-westmarch---chapter-x-title)
   - [Summary](#summary)
   - [Artifact](#artifact)
   - [AI Assistance](#ai-assistance)
@@ -37,28 +40,24 @@ Das war am Anfang alles etwas viel, aber mit Hilfe von Gandalf haben wir es dann
 
 **Build:**
 
-... [requirements document / Mermaid flow / wireframe / HTML + CSS page / JavaScript page / low-code extension]
+n/a
 
 **Focus:**
 
-... [specific feature of the system / requirement addressed]
+Konzepterstellung
 
 ---
 
 ## AI Assistance
 
-*`Adapt to your project...`*
+Wir haben vor allem Gandalf benutzt, da wir eine Hilfestellung zur Verwendung von GitHub, wie man ein Repository anlegt, strukturiert, etc. haben wollten. Das hat mit ein bisschen Justierung des Prompts gut funktioniert und wir haben eine gute Anleitung erhalten. Die KI hat uns gut erklärt wie man das Repository erstellt, Ordner einbaut und Dateien verlinkt. 
 
-- What did I expect?
-- What actually happened?
-- How did AI help or mislead me?
-- What decision (changes) did I make consciously?
-- What would I do differently next time?
+Bei dem kreativen Part, also der Erstellung des Konzeptes selbst, haben wir zu Beginn kurz ChatGPT benutzt um möglichst viele Inputs zu bekommen, das hat aber nicht wirklich gut funktioniert. Daher haben wir hier von allem mittels Brainstorming in der Gruppe Ideen gesammelt und ausformuliert. 
 
 ---
 
 ## Lessons Learned
 
-*`Adapt to your project...`*
-
-- Insights, challenges, reflections
+- GitHub ist immer noch sehr überwältigend für uns, da wir vorher damit noch nie zu tun hatten - aber es wird LANGSAM besser!
+- sehr viele Infos auf einmal, daher war es gar nicht so leicht, die zu finden, die wir für die erste Aufgabe benötigt haben
+- wir haben anhand der Übung gut gesehen, welche Fragen man sich grundsätzlich zu Beginn eines Software-Projektes stellen muss und dass es gar nicht so einfach ist die Produktbeschreibung auf den Punkt zu bringen
