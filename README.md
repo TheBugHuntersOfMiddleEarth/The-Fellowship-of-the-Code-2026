@@ -84,4 +84,5 @@ The Fellowship Companion is a **evolving digital tool** we build together. It is
 
 *`Adapt to your project...`*
 
-Version 0.1: setting up the repository, creating and sharing the first artifact
+Version 0.1: 
+- setting up the repository, creating and sharing the first artifact
