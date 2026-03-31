@@ -4,9 +4,10 @@
 
 - [The Fellowship Companion - Artifact 1: Situation & Intent](#the-fellowship-compantion---artifact-1-situation-&-intent)
   - [Situation](#1.-situation)
-  - [Artifact](#artifact)
-  - [AI Assistance](#ai-assistance)
-  - [Lessons Learned](#lessons-learned)
+  - [Intent](#2.-intent)
+  - [Value](#3.-value)
+  - [System Capabilities](#4.-system-capabilities)
+  - [Assumptions & Constraints](#5.-assumptions-&-constraints)
 
 ## 1. Situation
 
