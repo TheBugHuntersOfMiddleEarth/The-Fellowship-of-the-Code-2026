@@ -7,7 +7,7 @@
   - [Intent](#2.-intent)
   - [Value](#3.-value)
   - [System Capabilities](#4.-system-capabilities)
-  - [Assumptions & Constraints](#5.-assumptions-&-constraints)
+  - [Assumptions & Constraints](#assumptions-&-constraints)
 
 ## 1. Situation
 
