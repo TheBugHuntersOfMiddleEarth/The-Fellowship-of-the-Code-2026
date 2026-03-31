@@ -2,7 +2,7 @@
 
 *`The Fellowship of the Code – A Developer's Tale`*
 
-*"Not all those who wander are lost" - Bilbo Baggins*
+"Not all those who wander are lost" - Bilbo Beutlin
 
 **Table of Contents**
 
