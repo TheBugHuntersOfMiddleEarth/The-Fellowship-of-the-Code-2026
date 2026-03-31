@@ -3,7 +3,7 @@
 **Table of Contents**
 
 - [The Fellowship Companion - Artifact 1: Situation & Intent](#the-fellowship-compantion---artifact-1-situation-&-intent)
-  - [Situation](#1.-situation)
+  - [Situation](#situation)
   - [Intent](#2.-intent)
   - [Value](#3.-value)
   - [System Capabilities](#4.-system-capabilities)
