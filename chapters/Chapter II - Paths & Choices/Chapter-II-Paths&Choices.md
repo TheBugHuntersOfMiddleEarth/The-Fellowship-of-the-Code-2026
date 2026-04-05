@@ -1,10 +1,10 @@
-# The Red Book of Westmarch - Chapter X: Title
+# The Red Book of Westmarch - Chapter II: Path and Choices
 
 *`LOTR Quote relevant to the assignment or artifact` `"..." - Character`*
 
 **Table of Contents**
 
-- [The Red Book of Westmarch - Chapter X: Title](#the-red-book-of-westmarch---chapter-x-title)
+- [The Red Book of Westmarch - Chapter II: Path and Choices](#the-red-book-of-westmarch---chapter-II-path-and-choices)
   - [Summary](#summary)
   - [Artifact](#artifact)
   - [AI Assistance](#ai-assistance)
@@ -61,3 +61,4 @@ It shows **what was added, why it was added, and how it fits into the larger sys
 *`Adapt to your project...`*
 
 - Insights, challenges, reflections
+
