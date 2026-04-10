@@ -40,7 +40,7 @@ The Fellowship Companion is a **evolving digital tool** we build together. It is
 1. **Chapter I - Setting Out**  
    *"I will take the Ring, though I do not know the way." - Frodo*
 
-   [Chapter I – Setting Out](./chapters/Chapter-I---Setting-Out/Chapter-I-Setting-Out.md)
+   [Chapter I – Setting Out](./chapters/Chapter-I-Setting-Out.md)
 
 2. **Chapter II - Paths & Choices**  
    *"All we have to decide is what to do with the time that is given us." - Gandalf*
