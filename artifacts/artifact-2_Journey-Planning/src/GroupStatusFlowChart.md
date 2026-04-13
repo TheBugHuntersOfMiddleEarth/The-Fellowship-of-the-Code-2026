@@ -31,7 +31,7 @@
         J --> K[Grund des Alarms anzeigen]
         K --> K1[Standort und Entfernung zum Ringträger anzeigen]
         K1--> K2[Button zum Abschalten des Alarms einblenden]
-        K --> L{Alarm ausgeschaltet?}
+        K2 --> L{Alarm ausgeschaltet?}
         L -->|Nein| J
         L -->|Ja| Y
     
