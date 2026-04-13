@@ -83,3 +83,7 @@ Version 0.1:
 - creating artifact and chapter files
 - working on artifact 1
 - creating chapter I of the Red Book and sharing artifact 1
+
+Version 0.2:
+- Simplify changelog section in README.md
+- creating flowchart status monitoring capability
