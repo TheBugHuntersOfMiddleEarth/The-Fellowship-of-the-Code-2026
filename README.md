@@ -77,11 +77,6 @@ The Fellowship Companion is a **evolving digital tool** we build together. It is
 
 ## Changelog
 
-*`This is our general changelog (e.g., new chapter contents added, rules changed, or major system revisions).`*
-
-*`Each chapter has its own detailed changelog for chapter-specific updates.`*
-
-*`Adapt to your project...`*
 
 Version 0.1: 
 - setting up the repository
