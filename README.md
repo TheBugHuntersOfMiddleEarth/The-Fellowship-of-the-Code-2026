@@ -90,3 +90,4 @@ Version 0.2:
 - creating a wireframe for the Ring Alert
 - describing the new feature
 - creating chapter II of the Red Book and sharing artifact 2
+- adding Bonus-Content
