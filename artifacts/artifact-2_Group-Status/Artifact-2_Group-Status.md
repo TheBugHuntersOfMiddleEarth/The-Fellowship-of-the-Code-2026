@@ -5,9 +5,11 @@
 - [The Fellowship Companion - Artifact 2: Group Status](#the-fellowship-companion---artifact-2-Group-Status)
   - [Selected Capability](#Selected-Capability)
   - [Why this capability](#Why-this-capability?)
-  - [Value](#3-value)
-  - [System Capabilities](#4-system-capabilities)
-  - [Assumptions & Constraints](#5-assumptions-and-constraints)
+  - [Supporting intent](#Supporting-Intent)
+  - [What was left out](#what-was-left-out)
+  - [Assumptions & Constraints](#assumptions-and-constraints)
+  - [Flowchart](#flowchart)
+  - [Wireframe](#wireframe)
 
 ---
 
@@ -17,7 +19,7 @@ Gruppenstatus – Gesundheits- & Standorttracking
 ### Why this capability?
 Die Gruppe reist durch gefährliche und unbekannte Gebiete. Den Status aller Gruppenmitglieder (Standort und Gesundheit) jederzeit zu kennen und im Notfall benachrichtigt zu werden, kann im Ernstfall entscheidend sein. Damit kann man auf Probleme frühzeitig reagieren und evtl kritische Gesundheitszustände vermeiden. Außerdem wird vermieden, dass die Gruppe in unbekannten Gebieten getrennt wird. Ist der Ringträge betroffen, soll ein besonderer Alarm ausgelöst werden. 
 
-### Supporting Intent
+### Supporting intent
 Dieses Feature wurde so designt, dass es die Gruppe optimal unterstützen kann. Wenn man vom System automatisch über kritische Zustände informiert wird, kann man rechtzeitig reagieren und Schlimmeres verhindern. Ein besonders eindeutiger Hinweis erfolgt, wenn der Ringträger, als wichtigstes Gruppenmitglied, betroffen ist. Hier wird ein Alarm an die gesamte Gruppe ausgeschickt um schnellstmögliche Hilfe für den Ringträger in Notsituationen zu ermöglichen.
 
 ### What was left out
