@@ -34,6 +34,7 @@ Dieses Feature wurde so designt, dass es die Gruppe optimal unterstützen kann. 
 Aktuell kann der Companion nur im Hintergrund den Status der Gruppe tracken und im Ernstfall Alarm schlagen. Mit diesem Feature wurde vorerst noch keine Möglichkeit implementiert, mit der die Gruppenmitglieder jederzeit manuell Echtzeitinfos abrufen können. Dieses Feature ist mit künfitgen Updates geplant. 
 
 ### Assumptions and Constraints
-It is assumed that each member has access to the system and updates their status regularly. The design prioritizes clarity over complexity due to limited time and resources during the journey.
+Damit dieses Feature funktionieren kann, müssen wir davon ausgehen, dass jedes Gruppenmitglied angemessen auf die Statusbenachrichtigungen reagiert und diese nicht ignoriert. Damit die Benachrichtigungen und der Ringalarm gesendet werden können, ist durchgehend eine stabile Verbindung nötig. Es könnte hier also zu Problemen in Gebieten mit schlechter Verbindung kommen. 
+
 
 
