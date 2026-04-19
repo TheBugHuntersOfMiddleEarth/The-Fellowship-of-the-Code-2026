@@ -10,10 +10,10 @@
   - [Assumptions & Constraints](#5-assumptions-and-constraints)
 
 ## Selected Capability
-Group Status – Health & Location Tracking
+Gruppenstatus – Gesundheits- & Standorttracking
 
 ### Why this capability?
-Die Gruppe reist durch gefährliche und unbekannte Gebiete. Den Status aller Gruppenmitglieder (Standort und Gesundheit) jederzeit zu kennen und im Notfall benachrichtigt zu werden, kann im Ernstfall entscheidend sein. Damit kann man auf Probleme frühzeitig reagieren und evtl kritische Gesundheitszustände vermeiden. Außerdem wird vermieden, dass die Gruppe in unbekannten Gebieten getrennt wird. 
+Die Gruppe reist durch gefährliche und unbekannte Gebiete. Den Status aller Gruppenmitglieder (Standort und Gesundheit) jederzeit zu kennen und im Notfall benachrichtigt zu werden, kann im Ernstfall entscheidend sein. Damit kann man auf Probleme frühzeitig reagieren und evtl kritische Gesundheitszustände vermeiden. Außerdem wird vermieden, dass die Gruppe in unbekannten Gebieten getrennt wird. Ist der Ringträge betroffen, soll ein besonderer Alarm ausgelöst werden. 
 
 ## Flowchart
 [Flowchart](#the-fellowship-of-the-code-2026--artifacts-artifact2_journey-planning-src-groupStatusFlowChart.md)
@@ -28,10 +28,10 @@ Die Gruppe reist durch gefährliche und unbekannte Gebiete. Den Status aller Gru
 ## Design Rationale
 
 ### Supporting Intent
-This design supports the Fellowship’s need for awareness and coordination. By centralizing all member statuses in one place, the system reduces confusion and allows quick decisions.
+Dieses Feature wurde so designt, dass es die Gruppe optimal unterstützen kann. Wenn man vom System automatisch über kritische Zustände informiert wird, kann man rechtzeitig reagieren und Schlimmeres verhindern. Ein besonders eindeutiger Hinweis erfolgt, wenn der Ringträger, als wichtigstes Gruppenmitglied, betroffen ist. Hier wird ein Alarm an die gesamte Gruppe ausgeschickt um schnellstmögliche Hilfe für den Ringträger in Notsituationen zu ermöglichen.
 
 ### What was left out
-Advanced features such as alerts, messaging, or historical tracking were intentionally excluded to keep the interaction simple and focused on core visibility.
+Aktuell kann der Companion nur im Hintergrund den Status der Gruppe tracken und im Ernstfall Alarm schlagen. Mit diesem Feature wurde vorerst noch keine Möglichkeit implementiert, mit der die Gruppenmitglieder jederzeit manuell Echtzeitinfos abrufen können. Dieses Feature ist mit künfitgen Updates geplant. 
 
 ### Assumptions and Constraints
 It is assumed that each member has access to the system and updates their status regularly. The design prioritizes clarity over complexity due to limited time and resources during the journey.
