@@ -31,12 +31,15 @@ Damit dieses Feature funktionieren kann, müssen wir davon ausgehen, dass jedes 
 ---
 
 ## Flowchart
-[Flowchart](src/Flowchart-GroupStatus.md)
+[zum Flowchart](src/Flowchart-GroupStatus.md)
 
 ---
 
 ## Wireframe
-(See src/decisions.png)
+[zum Wireframe für einen Ring Alarm](src/wireframeRingAlarmSkizze.png)
+
+### Bonus-Content
+[Designentwurf Ring Alarm](src/DesignEntwurfRingAlarm.png)
 
 
 
