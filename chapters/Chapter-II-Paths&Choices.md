@@ -27,7 +27,7 @@ In diesem Kapitel geht es um das 2. Artefakt unseres Fellowship Companions. Wir 
 ## Artifact
 
 
-**File:** `[Name](Link)`
+**File:** [Artifact-2_Group-Status]
 
 **Build:**
 
@@ -51,5 +51,5 @@ Wir haben uns erwartet, dass wir mit Hilfe der KI erste Entwürfe für das Flowc
 
 ## Lessons Learned
 
-Keep it simple! Es war sehr schwer den Flow von Beginn an simpel zu gestalten, weil wir viel zu kompliziert gedacht haben. Hier haben wir eindeutig festgestellt, dass weniger oft mehr ist. 
+**Keep it simple!** Es war sehr schwer den Flow von Beginn an simpel zu gestalten, weil wir viel zu kompliziert gedacht haben. Hier haben wir eindeutig festgestellt, dass weniger oft mehr ist. 
 
