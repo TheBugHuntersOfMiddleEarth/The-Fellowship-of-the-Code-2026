@@ -33,10 +33,9 @@ In diesem Kapitel geht es um das 2. Artefakt unseres Fellowship Companions. Wir 
 
 **Build:**
 
-[Flowchart](../
+[Flowchart](../artifacts/artifact-2_Group-Status/src/Flowchart-GroupStatus.md)
 
-Wireframe
-Link
+[Wireframe](../artifacts/artifact-2_Group-Status/src/wireframeRingAlarmSkizze.png)
 
 **Focus:**
 
