@@ -3,7 +3,7 @@
 **Table of Contents**
 
 - [The Fellowship Companion - Artifact 2: Group Status](#the-fellowship-companion---artifact-2-Group-Status)
-  - [Selected Capability](##Selected-Capability)
+  - [Selected Capability](#Selected-Capability)
   - [Why this capability](#2-intent)
   - [Value](#3-value)
   - [System Capabilities](#4-system-capabilities)
