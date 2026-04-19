@@ -1,6 +1,6 @@
 # The Red Book of Westmarch - Chapter II: Path and Choices
 
-*`LOTR Quote relevant to the assignment or artifact` `"..." - Character`*
+*„Es ist der Ring. Du kannst den Blick nicht von ihm abwenden. Ich habe es gesehen. Du isst nicht, du schläfst kaum. Er hat dich im Griff, Herr Frodo. Du musst dagegen ankämpfen!“ - Samwise*
 
 **Table of Contents**
 
