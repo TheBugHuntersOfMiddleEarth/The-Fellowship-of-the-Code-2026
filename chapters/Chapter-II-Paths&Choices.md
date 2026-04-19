@@ -27,12 +27,13 @@ In diesem Kapitel geht es um das 2. Artefakt unseres Fellowship Companions. Wir 
 ## Artifact
 
 
-**File:** [Artifact-2_Group-Status](../artifacts/artifact-2_Group-Status/Artifact-2_Group-Status.md)
+**File:** 
+
+[Artifact-2_Group-Status](../artifacts/artifact-2_Group-Status/Artifact-2_Group-Status.md)
 
 **Build:**
 
-Flow
-Link
+[Flowchart](../
 
 Wireframe
 Link
