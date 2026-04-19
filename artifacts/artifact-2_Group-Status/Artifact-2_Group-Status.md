@@ -2,9 +2,9 @@
 
 **Table of Contents**
 
-- [The Fellowship Companion - Artifact 2: Ring Alert](#the-fellowship-companion---artifact-2-Group-Status)
+- [The Fellowship Companion - Artifact 2: Group Status](#the-fellowship-companion---artifact-2-Group-Status)
   - [Selected Capability](#1-Capability)
-  - [Intent](#2-intent)
+  - [Why this capability](#2-intent)
   - [Value](#3-value)
   - [System Capabilities](#4-system-capabilities)
   - [Assumptions & Constraints](#5-assumptions-and-constraints)
