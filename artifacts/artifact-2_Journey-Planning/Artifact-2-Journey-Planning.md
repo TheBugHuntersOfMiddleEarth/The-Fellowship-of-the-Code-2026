@@ -1,4 +1,4 @@
-# The Fellowship Companion - Artifact 2: Journey Planning
+# The Fellowship Companion - Artifact 2: Ring Alert
 
 **Table of Contents**
 
