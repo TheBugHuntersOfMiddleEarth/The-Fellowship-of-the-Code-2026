@@ -16,7 +16,7 @@
 ## Selected Capability
 Gruppenstatus – Gesundheits- & Standorttracking
 
-### Why this capability?
+### Why this capability
 Die Gruppe reist durch gefährliche und unbekannte Gebiete. Den Status aller Gruppenmitglieder (Standort und Gesundheit) jederzeit zu kennen und im Notfall benachrichtigt zu werden, kann im Ernstfall entscheidend sein. Damit kann man auf Probleme frühzeitig reagieren und evtl kritische Gesundheitszustände vermeiden. Außerdem wird vermieden, dass die Gruppe in unbekannten Gebieten getrennt wird. Ist der Ringträge betroffen, soll ein besonderer Alarm ausgelöst werden. 
 
 ### Supporting intent
