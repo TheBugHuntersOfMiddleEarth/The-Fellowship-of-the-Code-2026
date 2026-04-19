@@ -16,7 +16,7 @@ Group Status – Health & Location Tracking
 Die Gruppe reist durch gefährliche und unbekannte Gebiete. Den Status aller Gruppenmitglieder (Standort und Gesundheit) jederzeit zu kennen und im Notfall benachrichtigt zu werden, kann im Ernstfall entscheidend sein. Damit kann man auf Probleme frühzeitig reagieren und evtl kritische Gesundheitszustände vermeiden. Außerdem wird vermieden, dass die Gruppe in unbekannten Gebieten getrennt wird. 
 
 ## Flowchart
-[Flowchart](#the-fellowship-companion-artifacts-artifact2_journey-planning-src-groupstatusflowchart.md)
+[Flowchart](#the-fellowship-of-the-code-2026--artifacts-artifact2_journey-planning-src-groupStatusFlowChart.md)
 
 ---
 
