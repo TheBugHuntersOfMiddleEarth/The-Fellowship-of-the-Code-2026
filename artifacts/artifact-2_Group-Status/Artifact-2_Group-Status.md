@@ -8,8 +8,7 @@
   - [Supporting intent](#Supporting-Intent)
   - [What was left out](#what-was-left-out)
   - [Assumptions & Constraints](#assumptions-and-constraints)
-  - [Flowchart](#flowchart)
-  - [Wireframe](#wireframe)
+  - [Unterlagen](#Unterlagen)
 
 ---
 
