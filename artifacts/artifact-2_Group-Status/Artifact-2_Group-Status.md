@@ -31,7 +31,7 @@ Damit dieses Feature funktionieren kann, müssen wir davon ausgehen, dass jedes 
 ---
 
 ## Flowchart
-[Flowchart](#the-fellowship-of-the-code-2026/artifacts/artifact2_group-status/src/flowchart-groupstatus.md)
+[Flowchart](#the-fellowship-of-the-code-2026/artifacts/artifact-2_group-status/src/flowchart-groupstatus.md)
 
 ---
 
