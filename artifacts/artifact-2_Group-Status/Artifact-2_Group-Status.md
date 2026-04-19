@@ -4,7 +4,7 @@
 
 - [The Fellowship Companion - Artifact 2: Group Status](#the-fellowship-companion---artifact-2-Group-Status)
   - [Selected Capability](#Selected-Capability)
-  - [Why this capability](#Why-this-capability?)
+  - [Why this capability](#Why-this-capability)
   - [Supporting intent](#Supporting-Intent)
   - [What was left out](#what-was-left-out)
   - [Assumptions & Constraints](#assumptions-and-constraints)
