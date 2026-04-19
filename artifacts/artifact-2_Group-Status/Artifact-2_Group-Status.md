@@ -9,6 +9,7 @@
   - [What was left out](#what-was-left-out)
   - [Assumptions & Constraints](#assumptions-and-constraints)
   - [Unterlagen](#Unterlagen)
+  - [Bonus-Content](#Bonus-Content)
 
 ---
 
@@ -32,12 +33,12 @@ Damit dieses Feature funktionieren kann, müssen wir davon ausgehen, dass jedes 
 ## Unterlagen
 
 ### Flowchart
-[zum Flowchart](src/Flowchart-GroupStatus.md)
-
----
+[Flowchart](src/Flowchart-GroupStatus.md)
 
 ### Wireframe
 [zum Wireframe für einen Ring Alarm](src/wireframeRingAlarmSkizze.png)
+
+---
 
 #### Bonus-Content
 [Designentwurf Ring Alarm](src/DesignEntwurfRingAlarm.png)
