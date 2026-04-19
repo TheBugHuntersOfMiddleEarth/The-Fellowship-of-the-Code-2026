@@ -87,3 +87,6 @@ Version 0.1:
 Version 0.2:
 - Simplify changelog section in README.md
 - creating flowchart status monitoring capability
+- creating a wireframe for the Ring Alert
+- describing the new feature
+- creating chapter II of the Red Book and sharing artifact 2
