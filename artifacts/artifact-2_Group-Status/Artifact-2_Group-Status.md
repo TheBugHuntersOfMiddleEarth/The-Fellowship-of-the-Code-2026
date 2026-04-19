@@ -30,15 +30,17 @@ Damit dieses Feature funktionieren kann, müssen wir davon ausgehen, dass jedes 
 
 ---
 
-## Flowchart
+## Unterlagen
+
+### Flowchart
 [zum Flowchart](src/Flowchart-GroupStatus.md)
 
 ---
 
-## Wireframe
+### Wireframe
 [zum Wireframe für einen Ring Alarm](src/wireframeRingAlarmSkizze.png)
 
-### Bonus-Content
+#### Bonus-Content
 [Designentwurf Ring Alarm](src/DesignEntwurfRingAlarm.png)
 
 
