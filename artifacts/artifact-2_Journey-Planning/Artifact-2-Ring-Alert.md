@@ -2,7 +2,7 @@
 
 **Table of Contents**
 
-- [The Fellowship Companion - Artifact 2: Ring Alert](#the-fellowship-companion---artifact-2-RingAlert)
+- [The Fellowship Companion - Artifact 2: Ring Alert](#the-fellowship-companion---artifact-2-Ring-Alert)
   - [Situation](#1-situation)
   - [Intent](#2-intent)
   - [Value](#3-value)
