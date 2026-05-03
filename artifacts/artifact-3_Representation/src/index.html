@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Ring-Alarm</title>
+
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+  <main class="ring-alarm-page">
+
+    <section class="ring-alarm-screen">
+
+      <header class="alarm-header">
+        <div class="ring-symbol" aria-hidden="true"></div>
+
+        <div class="alarm-header-text">
+          <h1>Ring-ALARM</h1>
+        </div>
+      </header>
+
+      <section class="alarm-reason-section">
+        <div class="health-icon" aria-hidden="true"></div>
+
+        <div class="alarm-reason-text">
+          <h2>Alarmgrund</h2>
+          <p>Kritischer Gesundheitswert erreicht!</p>
+        </div>
+      </section>
+
+      <section class="location-section">
+        <header class="location-header">
+          <h2>Standort des Ringträgers</h2>
+          <p>250 m entfernt</p>
+        </header>
+
+        <div id="map" class="map-container">
+          <img
+            src="assets/08_fantasy_map.png"
+            alt="Fantasy-Karte mit Standort des Ringträgers"
+            class="map-image"
+          />
+        </div>
+      </section>
+
+      <section class="alarm-actions">
+        <button class="alarm-dismiss-button" type="button">
+          Alarm ausschalten
+        </button>
+
+        <p class="alarm-note">
+          Der Alarm wurde automatisch an alle Gruppenmitglieder gesendet.
+        </p>
+      </section>
+
+    </section>
+
+  </main>
+</body>
+</html>
