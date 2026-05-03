@@ -16,14 +16,6 @@
 
 In diesem Kapitel geht es um die Implementierung eines statischen Interfaces für das Feature das wir in Artifact 2 designt haben. Wir haben ein HTML-Interface gebaut und für die Optik ein CSS-Stylesheet angelegt. Das Interface zeigt wie es aussehen soll wenn ein Ringalarm ausgelöst wird. 
 
-**Learning Outcomes**
-
-- wie html und css zusammenspielen
-- Understand [concept / skill of the phase]
-- Apply [tool / language / logic] to build [artifact]
-- Reflect on AI-assisted development and decision-making
-- Contribute to a **shared, evolving system**
-
 ---
 
 ## Artifact
@@ -37,20 +29,17 @@ In diesem Kapitel geht es um die Implementierung eines statischen Interfaces fü
 [HTML-Interface](../artifacts/artifact-3_Representation/src/interface.html)
 
 [CSS-Stylesheet](../artifacts/artifact-3_Representation/src/css/style.css)
-... [requirements document / Mermaid flow / wireframe / HTML + CSS page / JavaScript page / low-code extension
-
 
 **Focus:**
 
-... [specific feature of the system / requirement addressed]
+Der Fokus unserer Arbeit liegt hier auf dem Ringalarm. Wir wollten mit dem aktuellen Build darstellen wie der Ringalarm für den Enduser aussieht. 
 
 ---
 
 ## AI Assistance
 
-*`Adapt to your project...`*
-
 - What did I expect?
+-- sf   
 - What actually happened?
 - How did AI help or mislead me?
 - What decision (changes) did I make consciously?
