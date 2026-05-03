@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ring-Alarm Dashboard</title>
+    <style>
+        :root {
+            --primary-red: #8b0000;
+            --parchment: #f4e4bc;
+            --border-color: #5d4037;
+            --text-dark: #2c1e1a;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #2c2c2c;
+            color: var(--text-dark);
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 500px;
+            background-color: var(--parchment);
+            border: 4px double var(--border-color);
+            padding: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+
+        /* HEADER SECTION */
+        header {
+            text-align: center;
+            border: 2px solid var(--border-color);
+            margin-bottom: 15px;
+            padding: 10px;
+        }
+
+        .branding-icon {
+            width: 40px;
+            height: 40px;
+            border: 2px solid var(--border-color);
+            margin: 0 auto 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        h1 { margin: 5px 0; letter-spacing: 2px; font-size: 1.5rem; }
+
+        /* ALARM SECTION (Skizze: Grund) */
+        .alarm-banner {
+            border: 3px solid var(--primary-red);
+            padding: 15px;
+            text-align: center;
+            margin-bottom: 15px;
+            background-color: rgba(139, 0, 0, 0.1);
+            position: relative;
+        }
+
+        .status-icon {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 40px;
+            height: 40px;
+            border: 1px solid var(--primary-red);
+        }
+
+        /* DASHBOARD / MEMBER LIST (The requested "Overview") */
+        .member-dashboard {
+            border: 2px solid var(--border-color);
+            padding: 10px;
+            margin-bottom: 15px;
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        .member-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .member-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 8px;
+            border-bottom: 1px solid var(--border-color);
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .member-item:hover { background: rgba(0,0,0,0.05); }
+
+        /* INTERACTION / DETAIL SECTION (For updating members) */
+        .detail-section {
+            border: 2px dashed var(--border-color);
+            padding: 15px;
+            margin-top: 15px;
+            background: #fff;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 8px;
+            margin: 5px 0 10px 0;
+            box-sizing: border-box;
+            border: 1px solid var(--border-color);
+        }
+
+        /* PRIMARY ACTION BUTTON */
+        .action-btn {
+            width: 100%;
+            padding: 15px;
+            background-color: var(--text-dark);
+            color: white;
+            border: none;
+            font-weight: bold;
+            font-size: 1.2rem;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        .action-btn:active { transform: scale(0.98); }
+
+        .footer-icons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 10px;
+        }
+
+        .icon-box { width: 50px; height: 50px; border: 2px solid var(--border-color); }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- Header basierend auf Skizze -->
+    <header>
+        <div class="branding-icon">💍</div>
+        <h1>RING-ALARM !!!!</h1>
+        <small>HEADER INFO: SYSTEM AKTIV</small>
+    </header>
+
+    <!-- Kritische Info (Skizze) -->
+    <div class="alarm-banner">
+        <strong>Grund:</strong><br>
+        kritischer Gesundheitswert erreicht!
+        <div class="status-icon">⚠️</div>
+    </div>
+
+    <!-- MEMBER DASHBOARD (Overview) -->
+    <div class="member-dashboard">
+        <h3>Gefährten Dashboard</h3>
+        <ul class="member-list">
+            <li class="member-item" onclick="selectMember('Frodo B.', 'Ringträger', '250m')">
+                <span>Frodo B. (Ringträger)</span>
+                <span>250m</span>
+            </li>
+            <li class="member-item" onclick="selectMember('Samweis G.', 'Beschützer', '252m')">
+                <span>Samweis G. (Gärtner)</span>
+                <span>252m</span>
+            </li>
+        </ul>
+    </div>
+
+    <!-- DETAIL SECTION (Interaction) -->
+    <div id="interaction" class="detail-section">
+        <h3>Mitglied aktualisieren</h3>
+        <label>Name:</label>
+        <input type="text" id="m-name" placeholder="Name wählen...">
+        
+        <label>Rolle:</label>
+        <select id="m-role">
+            <option>Ringträger</option>
+            <option>Beschützer</option>
+            <option>Zauberer</option>
+        </select>
+
+        <button class="action-btn" style="background: #5d4037; font-size: 0.9rem; padding: 8px;">Änderungen speichern</button>
+    </div>
+
+    <!-- Primary Action (Skizze) -->
+    <button class="action-btn" style="background: var(--primary-red);">Alarm ausschalten</button>
+
+    <!-- Footer Icons (Skizze) -->
+    <div class="footer-icons">
+        <div class="icon-box" title="Hobbit Hole">🏠</div>
+        <div class="icon-box" title="Beer Mug">🍺</div>
+    </div>
+</div>
+
+<script>
+    // Einfache Interaktions-Logik
+    function selectMember(name, role, distance) {
+        document.getElementById('m-name').value = name;
+        document.getElementById('m-role').value = role;
+        // Fokus auf die Sektion
+        document.getElementById('interaction').scrollIntoView({behavior: 'smooth'});
+    }
+</script>
+
+</body>
+</html>
