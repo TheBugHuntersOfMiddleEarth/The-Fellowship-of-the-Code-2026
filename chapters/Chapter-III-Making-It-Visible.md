@@ -14,13 +14,11 @@
 
 ## Summary
 
-*`Adapt to your project...`*
-
-This chapter focuses on **[one specific requirement or artifact]** of The Fellowship Companion.
-It shows **what was added, why it was added, and how it fits into the larger system**.
+In diesem Kapitel geht es um die Implementierung eines statischen Interfaces für das Feature das wir in Artifact 2 designt haben. Wir haben ein HTML-Interface gebaut und für die Optik ein CSS-Stylesheet angelegt. Das Interface zeigt wie es aussehen soll wenn ein Ringalarm ausgelöst wird. 
 
 **Learning Outcomes**
 
+- wie html und css zusammenspielen
 - Understand [concept / skill of the phase]
 - Apply [tool / language / logic] to build [artifact]
 - Reflect on AI-assisted development and decision-making
@@ -30,13 +28,16 @@ It shows **what was added, why it was added, and how it fits into the larger sys
 
 ## Artifact
 
-*`Adapt to your project...`*
+**File:**
 
-**File:** [Artifact-3_Representation](../artifacts/artifact-3_Representation/Artifact-3-representation.md)
+[Artifact-3_Representation](../artifacts/artifact-3_Representation/Artifact-3-representation.md)
 
-**Build:**
+**Build:** 
 
-... [requirements document / Mermaid flow / wireframe / HTML + CSS page / JavaScript page / low-code extension]
+[HTML-Interface](../artifacts/artifacts-3_Representation/src/interface.html)
+[CSS-Stylesheet](../artifacts/artifacts-3_Representation/src/css/style.css)
+... [requirements document / Mermaid flow / wireframe / HTML + CSS page / JavaScript page / low-code extension
+
 
 **Focus:**
 
