@@ -2,14 +2,10 @@
 
 **Table of Contents**
 
-- [The Fellowship Companion - Artifact 3: representation](#the-fellowship-companion---artifact-3-representation)
   - [Selected Capability](#Selected-Capability)
-  - [Why this capability](#Why-this-capability)
-  - [Supporting intent](#Supporting-Intent)
-  - [What was left out](#what-was-left-out)
-  - [Assumptions & Constraints](#assumptions-and-constraints)
-  - [Unterlagen](#Unterlagen)
-  - [Bonus-Content](#Bonus-Content)
+  - [HTML](#HTML-File)
+  - [CSS](#CSS-file)
+  - [Design rationale](#Design-rationale)
 
 ---
 
