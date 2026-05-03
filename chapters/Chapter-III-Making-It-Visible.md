@@ -34,8 +34,9 @@ In diesem Kapitel geht es um die Implementierung eines statischen Interfaces fü
 
 **Build:** 
 
-[HTML-Interface](../artifacts/artifacts-3_Representation/src/interface.html)
-[CSS-Stylesheet](../artifacts/artifacts-3_Representation/src/css/style.css)
+[HTML-Interface](../artifacts/artifact-3_Representation/src/interface.html)
+
+[CSS-Stylesheet](../artifacts/artifact-3_Representation/src/css/style.css)
 ... [requirements document / Mermaid flow / wireframe / HTML + CSS page / JavaScript page / low-code extension
 
 
