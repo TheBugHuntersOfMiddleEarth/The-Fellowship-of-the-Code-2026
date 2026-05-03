@@ -13,7 +13,8 @@ Gruppenstatus – Gesundheits- & Standorttracking - Ring Alarm
 
 Das Feature haben wir bereits in Artifact-2 ausführlich dargestellt und beschrieben. Es trackt laufend den Status der einzelnen Gruppenmitglieder und benachrichtigt die Gruppe wenn bei jemandem ein kritischer Zustand eintritt. Ist der Ringträger betroffen, erfolgt ein besonderer Alarm an alle. Zur Visualisierung haben wir nur ein statisches HTML-Interface mit einem entsprechenden CSS-Style-Sheet gebaut. Dargestellt wird das Interface, dass die User sehen, wenn ein Ring-Alarm ausgelöst wurde und dieser an alle Nutzer ausgeschickt wurde. Der User sieht auf einen Blick warum er den Alarm bekommnt (in diesem Fall aufgrund des kritischen Gesundheitszustandes des Ringträgers) und wo sich dieser befindet. hier soll künftig eine direkte Navigation zum Betroffenen möglich sein. Der Alarm geht an alle Gruppenmitglieder und läutet so lange bis er über den Button "Alarm ausschalten" beendet wird. 
 
-[Details](../artifacts/artifact-2_Group-Status/Artifact-2_Group-Status.md)
+[Details](../artifact-2_group-status/artifact-2_Group-status.md)
+
 ---
 
 ## Static Interface
