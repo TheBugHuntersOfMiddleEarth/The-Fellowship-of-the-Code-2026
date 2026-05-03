@@ -1,0 +1,145 @@
+/* Allgemein */
+body {
+  font-family: Arial, sans-serif;
+  background: #f4f4f4;
+  margin: 0;
+  padding: 20px;
+  line-height: 1.4;
+}
+
+/* Header */
+header {
+  background: #fff;
+  padding: 15px;
+  border: 2px solid #000;
+  text-align: center;
+  margin-bottom: 20px;
+  animation: alarmBlink 1s infinite;
+  color: #b30000; /* feuerrot */
+}
+
+header h1 {
+  margin: 0;
+  letter-spacing: 2px;
+}
+
+.logo {
+  margin-bottom: 5px;
+}
+
+/* Alarm-Header Effekt */
+header.alarm {
+  animation: alarmBlink 1s infinite;
+  color: #b30000; /* feuerrot */
+}
+
+/* Animation definieren */
+@keyframes alarmBlink {
+  0% {
+    background-color: #fff;
+    color: #000;
+  }
+  50% {
+    background-color: yellow;
+    color: #b30000; /* feuerrot */
+  }
+  100% {
+    background-color: #fff;
+    color: #000;
+  }
+}
+
+/* Layout */
+main {
+  max-width: 900px;
+  margin: auto;
+}
+
+.section {
+  background: #fff;
+  border: 2px solid #000;
+  padding: 15px;
+  margin-bottom: 20px;
+}
+
+/* Flex Layout */
+.flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Inhalte */
+.reason {
+  font-size: 1.4em;
+  font-weight: bold;
+  text-align: center;
+}
+
+.distance {
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
+.icon {
+  padding: 10px;
+  border: 1px dashed #000;
+}
+
+/* Map */
+.map {
+  height: 300px;
+  border: 2px dashed #666;
+  position: relative;
+  margin-top: 10px;
+  background: #fafafa;
+}
+
+.map span {
+  position: absolute;
+  font-size: 0.8em;
+  background: #fff;
+  padding: 2px 4px;
+  border: 1px solid #000;
+}
+
+.map .user {
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.map .ring {
+  top: 30px;
+  right: 40px;
+}
+
+.map .place {
+  top: 50%;
+  left: 30%;
+}
+
+/* Button */
+.button-area {
+  text-align: center;
+}
+
+button {
+  font-size: 1.2em;
+  padding: 12px 30px;
+  border: 2px solid #000;
+  background: #ddd;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #bbb;
+}
+
+/* Footer */
+footer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+  font-size: 0.9em;
+}

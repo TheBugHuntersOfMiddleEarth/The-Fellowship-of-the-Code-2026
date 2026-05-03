@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>Ring Alarm Interface</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+      margin: 0;
+      padding: 20px;
+      line-height: 1.4;
+    }
+
+    header {
+      background: #fff;
+      padding: 15px;
+      border: 2px solid #000;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    header h1 {
+      margin: 0;
+      letter-spacing: 2px;
+    }
+
+    main {
+      max-width: 900px;
+      margin: auto;
+    }
+
+    section {
+      background: #fff;
+      border: 2px solid #000;
+      padding: 15px;
+      margin-bottom: 20px;
+    }
+
+    .flex {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .reason {
+      font-size: 1.4em;
+      font-weight: bold;
+      text-align: center;
+    }
+
+    .distance {
+      font-weight: bold;
+      font-size: 1.2em;
+    }
+
+    .map {
+      height: 300px;
+      border: 2px dashed #666;
+      position: relative;
+      margin-top: 10px;
+      background: #fafafa;
+    }
+
+    .map span {
+      position: absolute;
+      font-size: 0.8em;
+      background: #fff;
+      padding: 2px 4px;
+      border: 1px solid #000;
+    }
+
+    .map .user {
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .map .ring {
+      top: 30px;
+      right: 40px;
+    }
+
+    .map .place {
+      top: 50%;
+      left: 30%;
+    }
+
+    .button-area {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    button {
+      font-size: 1.2em;
+      padding: 12px 30px;
+      border: 2px solid #000;
+      background: #ddd;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #bbb;
+    }
+
+    footer {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 10px;
+      font-size: 0.9em;
+    }
+
+  </style>
+</head>
+<body>
+
+<header>
+  <div>[Brand / Ring Icon]</div>
+  <h1>RING-ALARM !!!!</h1>
+  <small>Header Info</small>
+</header>
+
+<main>
+
+  <!-- Alarm Reason -->
+  <section>
+    <div class="flex">
+      <div>
+        <h2>Grund:</h2>
+        <p class="reason">kritischer Gesundheitswert erreicht!</p>
+      </div>
+      <div>[Health Status Icon]</div>
+    </div>
+  </section>
+
+  <!-- Distance -->
+  <section class="flex">
+    <div>[Distance Icon]</div>
+    <div class="distance">Abstand zum Ringträger: 250m</div>
+  </section>
+
+  <!-- Map -->
+  <section>
+    <h3>Karte</h3>
+    <div class="map">
+      <span class="user">User Position</span>
+      <span class="ring">Ring-Träger</span>
+      <span class="place">Shire / Hobbiton</span>
+    </div>
+    <small>Interaktive Zone (Zoom / Pan)</small>
+  </section>
+
+  <!-- Action -->
+  <section class="button-area">
+    <button>Alarm ausschalten</button>
+    <div><small>(Alarm Dismissal)</small></div>
+  </section>
+
+</main>
+
+<footer>
+  <div>[Kontext Icon 1]</div>
+  <div>[Kontext Icon 2]</div>
+</footer>
+
+</body>
+</html>
