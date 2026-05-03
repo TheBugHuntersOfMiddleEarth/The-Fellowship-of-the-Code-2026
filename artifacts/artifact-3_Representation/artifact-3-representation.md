@@ -22,17 +22,10 @@ hier gelangt ihr zu einer kleinen statischen Vorschau unseres HTML-Interfaces f�
 
 ## CSS Style Sheet
 
-hier gelangt ihr zum zugehörigen CSS-Style Sheet
+hier gelangt ihr zum zugehörigen CSS-Style Sheet.
 
 [CSS-Style-Sheet](src/css/style.css)
 
-### Flowchart
-[Flowchart](src/Flowchart-GroupStatus.md)
-
-### Wireframe
-[zum Wireframe für einen Ring Alarm](src/wireframeRingAlarmSkizze.png)
-
 ---
 
-#### Bonus-Content
-[Designentwurf Ring Alarm](src/DesignEntwurfRingAlarm.png)
+## Design Rationale
