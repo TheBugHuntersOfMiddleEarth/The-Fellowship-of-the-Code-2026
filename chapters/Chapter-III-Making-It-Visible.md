@@ -39,17 +39,19 @@ Der Fokus unserer Arbeit liegt hier auf dem Ringalarm. Wir wollten mit dem aktue
 ## AI Assistance
 
 - What did I expect?
--- sf   
+  Einen funktionierenden Code für das geplante Interface.    
 - What actually happened?
+  Der Code an sich hat von Anfang an gut funktioniert, semantisch waren aber einige Anpassungen nötig. 
 - How did AI help or mislead me?
-- What decision (changes) did I make consciously?
+  Sie hat uns die Schreibarbeit für den Code abgenommen, kann uns aber noch nicht die Logik abnehmen. Sie schreibt zwar syntaktisch richtigen Code, versteht aber nicht immer was man            eigentlich haben wollte. 
 - What would I do differently next time?
+  Wir können unser prompting verbessern, um schneller bessere Ergebnisse zu erhalten. 
 
 ---
 
 ## Lessons Learned
 
-*`Adapt to your project...`*
+Es ist echt viel Code nötig, für das dass noch nicht einmal irgendwelche Funktionen eingebaut wurden. Vor allem das Stylesheet kann ziemlich schnell ausarten. KI ist hier eine gute Unterstützung, man kann sich aber nicht 100% darauf verlassen. 
 
-- Insights, challenges, reflections
+
 
