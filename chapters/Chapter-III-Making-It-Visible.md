@@ -1,6 +1,6 @@
 # The Red Book of Westmarch - Chapter III: Making It Visible
 
-*“The board is set. The pieces are moving.” – Gandalf*
+*“It’s the Ring. You can’t take your eyes off it. I’ve seen you. You’re not eating; you barely sleep. It’s taken hold of you, Mr. Frodo. You have to fight it!” - Sam*
 
 **Table of Contents**
 
