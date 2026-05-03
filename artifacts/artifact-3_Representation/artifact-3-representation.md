@@ -4,7 +4,7 @@
 
   - [Selected Capability](#Selected-Capability)
   - [HTML Interface](#HTML-Interface)
-  - [CSS](#CSS-file)
+  - [CSS-Style-Sheet](#CSS-style-sheet)
   - [Design rationale](#Design-rationale)
 
 ---
