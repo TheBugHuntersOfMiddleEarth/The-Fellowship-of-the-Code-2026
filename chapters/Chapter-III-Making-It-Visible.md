@@ -32,7 +32,7 @@ It shows **what was added, why it was added, and how it fits into the larger sys
 
 *`Adapt to your project...`*
 
-**File:** [Artifact-3_Representation](../artifact-3_Representation/Artifact-3-representation.md)
+**File:** [Artifact-3_Representation](../artifacts/artifact-3_Representation/Artifact-3-representation.md)
 
 **Build:**
 
