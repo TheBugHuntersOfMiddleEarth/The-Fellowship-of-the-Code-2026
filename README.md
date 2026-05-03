@@ -77,14 +77,17 @@ The Fellowship Companion is a **evolving digital tool** we build together. It is
 
 ## Changelog
 
-*`This is our general changelog (e.g., new chapter contents added, rules changed, or major system revisions).`*
-
-*`Each chapter has its own detailed changelog for chapter-specific updates.`*
-
-*`Adapt to your project...`*
 
 Version 0.1: 
 - setting up the repository
 - creating artifact and chapter files
 - working on artifact 1
 - creating chapter I of the Red Book and sharing artifact 1
+
+Version 0.2:
+- Simplify changelog section in README.md
+- creating flowchart status monitoring capability
+- creating a wireframe for the Ring Alert
+- describing the new feature
+- creating chapter II of the Red Book and sharing artifact 2
+- adding Bonus-Content

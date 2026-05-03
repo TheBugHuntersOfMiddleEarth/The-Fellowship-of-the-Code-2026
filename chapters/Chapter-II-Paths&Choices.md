@@ -1,6 +1,6 @@
 # The Red Book of Westmarch - Chapter II: Path and Choices
 
-*`LOTR Quote relevant to the assignment or artifact` `"..." - Character`*
+*„Es ist der Ring. Du kannst den Blick nicht von ihm abwenden. Ich habe es gesehen. Du isst nicht, du schläfst kaum. Er hat dich im Griff, Herr Frodo. Du musst dagegen ankämpfen!“ - Samwise*
 
 **Table of Contents**
 
@@ -14,51 +14,42 @@
 
 ## Summary
 
-*`Adapt to your project...`*
-
-This chapter focuses on **[one specific requirement or artifact]** of The Fellowship Companion.
-It shows **what was added, why it was added, and how it fits into the larger system**.
+In diesem Kapitel geht es um das 2. Artefakt unseres Fellowship Companions. Wir haben einen Flow und ein Wireframe zur Entwicklung eines Trackingssystems für den Gesundheitszustand und den Standort unserer Gruppenmitglieder erstellt. Was genau wir entwickelt haben und warum ist in der Beschreibung des Artefaktes ersichtlich.  
 
 **Learning Outcomes**
 
-- Understand [concept / skill of the phase]
-- Apply [tool / language / logic] to build [artifact]
-- Reflect on AI-assisted development and decision-making
-- Contribute to a **shared, evolving system**
+- Mermaid-Flowcharts erstellen
+- es ist schwierig, den Flow "small and simple" zu halten, es artet leicht in extrem viele Abzweigungen aus
+- die Nutzeroberfläche mit einem Wireframe zu designen
 
 ---
 
 ## Artifact
 
-*`Adapt to your project...`*
 
-**File:** `[Name](Link)`
+**File:** 
+
+[Artifact-2_Group-Status](../artifacts/artifact-2_Group-Status/Artifact-2_Group-Status.md)
 
 **Build:**
 
-... [requirements document / Mermaid flow / wireframe / HTML + CSS page / JavaScript page / low-code extension]
+[Flowchart](../artifacts/artifact-2_Group-Status/src/Flowchart-GroupStatus.md)
+
+[Wireframe](../artifacts/artifact-2_Group-Status/src/wireframeRingAlarmSkizze.png)
 
 **Focus:**
 
-... [specific feature of the system / requirement addressed]
+Unser Fokus war die Benachrichtigung der Gruppe, sofern bei einem Gruppenmitglied ein kritischer Zustand eintritt. Aufgrund der Wichtigkeit des Ringträgers haben wir für ihn einen besonders eindeutigen Alarm entwickelt. Es sollte noch nicht darum gehen, dass die Gruppe den Status der anderen jederzeit in Echtzeit abrufen kann. 
 
 ---
 
 ## AI Assistance
 
-*`Adapt to your project...`*
-
-- What did I expect?
-- What actually happened?
-- How did AI help or mislead me?
-- What decision (changes) did I make consciously?
-- What would I do differently next time?
+Wir haben uns erwartet, dass wir mit Hilfe der KI erste Entwürfe für das Flowchart und das Wireframe erstellen können. Das hat im Großen und Ganzen auch ganz gut funktioniert. Vor allem Mermaid funktioniert sehr gut mit KI und liefert gute Ergebnisse. Beim Wireframe muss man schon sehr genau prompten um brauchbare Ergebenisse zu erhalten. Wenn man selbst mit einem Tool ein Wireframe erstellt und es dann der KI zur Verfügung stellt, kann man sehr schnell und einfach eine schönere Version kreieren. 
 
 ---
 
 ## Lessons Learned
 
-*`Adapt to your project...`*
-
-- Insights, challenges, reflections
+**Keep it simple!** Es war sehr schwer den Flow von Beginn an simpel zu gestalten, weil wir viel zu kompliziert gedacht haben. Hier haben wir eindeutig festgestellt, dass weniger oft mehr ist. 
 
