@@ -3,7 +3,7 @@
 **Table of Contents**
 
   - [Selected Capability](#Selected-Capability)
-  - [HTML Interface](#HTML-Interface)
+  - [Static Interface](#Static-Interface)
   - [CSS-Style-Sheet](#CSS-style-sheet)
   - [Design rationale](#Design-rationale)
 
@@ -12,17 +12,17 @@
 ## Selected Capability
 Gruppenstatus – Gesundheits- & Standorttracking
 
-## HTML Interface
+Das Feature haben wir bereits in Artifact-2 ausführlich dargestellt und beschrieben. Zur Visualisierung haben wir nur ein statisches HTML-Interface mit einem entsprechenden CSS-Style-Sheet gebaut. Dargestellt wird das Interface, dass die User sehen, wenn ein Ring-Alarm ausgelöst wurde und dieser an alle Nutzer ausgeschickt wurd
 
-hier gelangt ihr zu einer kleinen statischen Vorschau unseres HTML-Interfaces für einen getriggerten Ring-Alarm.
+## Static Interface
+
+### HTML Interface
 
 [HTML-Interface](src/interface.html)
 
 ---
 
-## CSS Style Sheet
-
-hier gelangt ihr zum zugehörigen CSS-Style Sheet.
+### CSS Style Sheet
 
 [CSS-Style-Sheet](src/css/style.css)
 
