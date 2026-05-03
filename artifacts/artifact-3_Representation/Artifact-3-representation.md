@@ -19,11 +19,7 @@ Das Feature haben wir bereits in Artifact-2 ausführlich dargestellt und beschri
 
 ## Static Interface
 
-### HTML Interface
-
 [HTML-Interface](src/interface.html)
-
-### CSS Style Sheet
 
 [CSS-Style-Sheet](src/css/style.css)
 
