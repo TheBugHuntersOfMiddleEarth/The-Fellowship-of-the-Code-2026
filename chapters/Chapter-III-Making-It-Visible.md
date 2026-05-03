@@ -1,6 +1,6 @@
 # The Red Book of Westmarch - Chapter III: Making It Visible
 
-*`LOTR Quote relevant to the assignment or artifact` `"..." - Character`*
+*“The board is set. The pieces are moving.” – Gandalf*
 
 **Table of Contents**
 
