@@ -5,58 +5,64 @@
 **Table of Contents**
 
 - [Sidequest - Reading the Runes](#sidequest---reading-the-runes)
-  - [Summary](#summary)
-  - [Artifact](#artifact)
+  - [Issue I - xxx](#Issue-I-xxx)
+  - [Issue II - xxx](#Issue-II-xxx)
   - [AI Assistance](#ai-assistance)
-  - [Lessons Learned](#lessons-learned)
 
 ---
 
 ## Issue I - xxx
 
-This chapter focuses on **[one specific requirement or artifact]** of The Fellowship Companion.
-It shows **what was added, why it was added, and how it fits into the larger system**.
+### Description
 
-**Learning Outcomes**
+**Where it occurs**
 
-- Understand [concept / skill of the phase]
-- Apply [tool / language / logic] to build [artifact]
-- Reflect on AI-assisted development and decision-making
-- Contribute to a **shared, evolving system**
+Text
+
+**What the code intends to do**
+
+Text
+
+**What actually hapens instead**
+
+Text
+
+### Why does it matter?
+
+*`How it affects the user experience; How could it cause bugs later; Why would it be risky in a larger system?`*
 
 ---
 
-## Artifact
+## Issue II - xxx
 
-*`Adapt to your project...`*
+### Description
 
-**File:** `[Name](Link)`
+**Where it occurs**
 
-**Build:**
+Text
 
-... [requirements document / Mermaid flow / wireframe / HTML + CSS page / JavaScript page / low-code extension]
+**What the code intends to do**
 
-**Focus:**
+Text
 
-... [specific feature of the system / requirement addressed]
+**What actually hapens instead**
+
+Text
+
+### Why does it matter?
+
+*`How it affects the user experience; How could it cause bugs later; Why would it be risky in a larger system?`*
+
+Text
 
 ---
 
 ## AI Assistance
 
-*`Adapt to your project...`*
+*`What did you ask the AI?; What was helpful?; What was misleading?; What did you have to decide yourself?`*
 
-- What did I expect?
-- What actually happened?
-- How did AI help or mislead me?
-- What decision (changes) did I make consciously?
-- What would I do differently next time?
+Text
 
 ---
 
-## Lessons Learned
-
-*`Adapt to your project...`*
-
-- Insights, challenges, reflections
 
