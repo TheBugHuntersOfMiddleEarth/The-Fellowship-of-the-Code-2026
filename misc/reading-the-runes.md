@@ -5,13 +5,13 @@
 **Table of Contents**
 
 - [Sidequest - Reading the Runes](#sidequest---reading-the-runes)
-  - [Issue I - xxx](#Issue-I---string-statt-number)
-  - [Issue II - xxx](#Issue-II---xxx)
+  - [Issue I](#Issue-I)
+  - [Issue II](#Issue-II)
   - [AI Assistance](#ai-assistance)
 
 ---
 
-## Issue I - String statt Number
+## Issue I
 
 ### Description
 
@@ -54,7 +54,7 @@ Neu:   const value = Number(amountInput.value);
 
 ---
 
-## Issue II - xxx
+## Issue II - Inventarstand falsch aktualiert
 
 ### Description
 
