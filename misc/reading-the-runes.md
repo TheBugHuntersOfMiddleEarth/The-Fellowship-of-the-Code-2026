@@ -5,8 +5,8 @@
 **Table of Contents**
 
 - [Sidequest - Reading the Runes](#sidequest---reading-the-runes)
-  - [Issue I - xxx](#Issue-I-xxx)
-  - [Issue II - xxx](#Issue-II-xxx)
+  - [Issue I - xxx](#Issue-I---xxx)
+  - [Issue II - xxx](#Issue-II---xxx)
   - [AI Assistance](#ai-assistance)
 
 ---
