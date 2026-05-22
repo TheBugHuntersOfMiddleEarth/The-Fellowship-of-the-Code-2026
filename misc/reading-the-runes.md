@@ -1,6 +1,6 @@
 # The Red Book of Westmarch - Chapter IV: When Things React
 
-*`LOTR Quote relevant to the assignment or artifact` `"..." - Character`*
+*"Short cuts make long delays" - Pippin*
 
 **Table of Contents**
 
