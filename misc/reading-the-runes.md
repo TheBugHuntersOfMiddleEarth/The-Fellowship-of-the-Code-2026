@@ -54,29 +54,31 @@ Neu:   const value = Number(amountInput.value);
 
 ---
 
-## Issue II - Inventarstand falsch aktualiert
+## Issue II
 
 ### Description
 
 **Where it occurs**
 
-Text
+Ein weiterer Entscheidender Fehler ist die fehlerhafte Aktualisierung des Inventarstandes nach einer Entnahme. Der Stand wird im Hintergrund zwar richtig aktualisiert, aber der Befehl "updateStatus()" wird zu früh ausgeführt. Das führt dazu, dass sich die Anzeige trotz Klick erstmal nicht ändert. Besonders problematisch ist das wenn ein Stand von 0 oder weniger erreicht werden würden. Dann bekommt man zwar richtigerweise die Warnmeldung, aber der Stand wird erst aktualisiert nachdem man die Meldung wegklickt. Grundsätzlich wird hier also nicht falsch gerechnet, sondern einfach falsch angezeigt im erstem Moment, was den User verwirren kann. 
 
 **What the code intends to do**
 
-Text
+Der Code sollte eigentlich dazu führen, dass mit dem Klicken des Buttons "Eat Rations" sofort der Stand um den eingegebenen Wert reduziert wird. Aufgrund der eingebauten IF-Funtktion sollte der Wert bei entsprechender Entnahme auch zuerst auf 0 sinken und dann die Warnmeldung aufscheinen. 
 
 **What actually hapens instead**
 
-Text
+Aktuell passiert es genau umgekehrt. Der Button wird geklickt und direkt danach wird updateStatus() ausgelöst und erst danach die IF-Funtktion ausgeführt. Dadurch ändert sich der Wert bei ersten Klick nicht, da zum Zeitpunkt der Aktualisierung noch gar nicht geprüft wurde, ob eine Warnmeldung eingeblendet werden muss oder nicht. Die Berechnung wird laut dem Code aber erst nach dieser Prüfung ausgeführt. Darum ist aktualisiert sich die Anzeige auch erst nach einem weiteren Klick. 
 
 ### Why does it matter?
 
 *`How it affects the user experience; How could it cause bugs later; Why would it be risky in a larger system?`*
 
-Text
+Es macht auf den ersten Blick den Eindruck, dass die App auf die Eingabe nicht reagiert. Das kann dazu führen, dass der User mehrfach klickt, da er denkt die erste Eingabe wurde nicht übernommen. Dadurch erfolgt dann aber immer wieder eine weitere Entnahme, wodurch den Endstand erst wieder fehlerhaft wird. Wie auch schon beim ersten Fehler kann das auf lange Sicht zu Problemen führen, weil dadurch mit falschen Werte weitergearbeitet werden könnte. Dieser Fehler ist aber im Nachhinein kaum noch nachvollziehbar. 
 
 ### Possible fixes
+
+Ein einfacher Fix wäre es den Befehl "updateStatus()" erst nach der IF-Funktion zu platzieren. Das führt dazu, dass erst die Prüfung und Berechnung erfolgt und dann erst die Anzeige aktualisiert wird. Somit wird sie dann auch gleich beim ersten Klick aktualisiert. 
 
 ---
 
