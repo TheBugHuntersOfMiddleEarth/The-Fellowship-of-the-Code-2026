@@ -14,51 +14,46 @@
 
 ## Summary
 
-*`Adapt to your project...`*
-
-This chapter focuses on **[one specific requirement or artifact]** of The Fellowship Companion.
-It shows **what was added, why it was added, and how it fits into the larger system**.
+Dieses Kapitel konzentriert sich auf die Ergänzung von Javascript Code zum statischen Interface aus Artifact 3. Das zuvor entwickelte Interface wurde von uns um interaktive Elemente erweitert und funktioniert nun so wie erdacht. 
 
 **Learning Outcomes**
 
-- Understand [concept / skill of the phase]
-- Apply [tool / language / logic] to build [artifact]
-- Reflect on AI-assisted development and decision-making
-- Contribute to a **shared, evolving system**
+- Javascript Code erstellen
+- Javascript, Css und Html verbinden
+- logisches Codeverständnis, Semantik verstehen
 
 ---
 
 ## Artifact
 
-*`Adapt to your project...`*
+**File:** 
 
-**File:** `[Name](Link)`
+[Artifact 4 - Logic and State](../artifacts/artifact-4_Logic-And-State/Artifact-4-logic-and-state.md)
 
 **Build:**
 
-... [requirements document / Mermaid flow / wireframe / HTML + CSS page / JavaScript page / low-code extension]
+[Html-Interface](../artifacts/artifact-4_Logic-And-State/src/interface.hmtl)
+
+[Css-Stylesheet](../artifacts/artifact-4_Logic-And-State/src/style.css)
+
+[Javascript](../artifacts/artifact-4_Logic-And-State/src/logic.js)
 
 **Focus:**
 
-... [specific feature of the system / requirement addressed]
+Das Konzept geht von einem Statustracking für die gesamte Gruppe aus. Da das im aktuellen Stadium aber noch nicht darstellbar ist, haben wir uns für diese Aufgabe auf den ausgelösten Ringalarm konzentriert und wie sich der Companion dabei verhält. 
 
 ---
 
 ## AI Assistance
 
-*`Adapt to your project...`*
-
-- What did I expect?
-- What actually happened?
-- How did AI help or mislead me?
-- What decision (changes) did I make consciously?
-- What would I do differently next time?
+- die KI hat beim Coden wieder sehr gut unterstützen können und sehr schnell und einfach syntaktisch richtigen Code erstellt
+- sie konnte auch recht gut die wichtigsten Anforderungen von selbst erkennen
+- was die KI nicht gut kann, ist Semantik. Man muss den Code genau prüfen, da sie schon gern etwas unlogisch vorgeht
 
 ---
 
 ## Lessons Learned
 
-*`Adapt to your project...`*
-
-- Insights, challenges, reflections
+- man kann mit wenig Code echt coole Sachen erstellen
+- mit der KI können wir auch mit wenig Erfahrung gute Dinge bauen
 
