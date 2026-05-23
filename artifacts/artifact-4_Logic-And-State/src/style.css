@@ -26,6 +26,18 @@ body {
     linear-gradient(135deg, #120805, #32170b 48%, #080302);
 }
 
+/* Lädt Hover-/Pressed-Button-Grafiken vor, damit beim ersten Hover nichts flackert */
+body::after {
+  content:
+    url("assets/alarm_button_bg_hover.svg")
+    url("assets/alarm_button_bg_pressed.svg");
+  position: absolute;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
 .ring-alarm-page {
   min-height: 100vh;
   padding: clamp(14px, 3vw, 40px);
