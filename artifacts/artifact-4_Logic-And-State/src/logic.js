@@ -19,15 +19,33 @@ document.addEventListener("DOMContentLoaded", () => {
   let alarmActive = true;
   let distance = 250;
   let zoom = 1;
+  let movementInterval = null;
+  let movementStarted = false;
+
+  const startDistance = 250;
 
   const ringTargetPosition = {
     x: 54,
     y: 48
   };
 
-  const myPosition = {
+  const myStartPosition = {
     x: 24,
     y: 74
+  };
+
+  const myPosition = {
+    x: myStartPosition.x,
+    y: myStartPosition.y
+  };
+
+  /*
+    Der grüne Marker bewegt sich bis knapp neben den roten Marker.
+    So bleibt bei 0 m Entfernung trotzdem sichtbar, dass es zwei Marker gibt.
+  */
+  const myEndPosition = {
+    x: ringTargetPosition.x - 4,
+    y: ringTargetPosition.y + 4
   };
 
   addAlarmStatus();
@@ -40,28 +58,6 @@ document.addEventListener("DOMContentLoaded", () => {
   ringSymbol?.classList.add("alarm-pulse");
   healthIcon?.classList.add("alarm-heartbeat");
 
-  const movementInterval = setInterval(() => {
-    if (!alarmActive) return;
-
-    moveMyMarkerTowardsRing(myMarker);
-
-    distance = Math.max(40, distance - 12);
-
-    if (distanceText) {
-      distanceText.textContent = `${distance} m entfernt`;
-    }
-
-    myMarker.classList.add("marker-jump");
-
-    setTimeout(() => {
-      myMarker.classList.remove("marker-jump");
-    }, 350);
-
-    if (distance <= 40) {
-      clearInterval(movementInterval);
-    }
-  }, 1800);
-
   dismissButton.addEventListener("click", () => {
     if (!alarmActive) return;
 
@@ -70,7 +66,10 @@ document.addEventListener("DOMContentLoaded", () => {
     if (!confirmed) return;
 
     alarmActive = false;
-    clearInterval(movementInterval);
+
+    if (movementInterval) {
+      clearInterval(movementInterval);
+    }
 
     alarmScreen.classList.remove("alarm-is-ringing");
     alarmScreen.classList.add("alarm-is-dismissed");
@@ -118,7 +117,13 @@ document.addEventListener("DOMContentLoaded", () => {
     zoomOut.textContent = "−";
     zoomOut.setAttribute("aria-label", "Karte verkleinern");
 
-    controls.append(zoomIn, zoomOut);
+    const moveToTarget = document.createElement("button");
+    moveToTarget.type = "button";
+    moveToTarget.className = "move-target-button";
+    moveToTarget.textContent = "Zum Ziel bewegen";
+    moveToTarget.setAttribute("aria-label", "Zum Standort des Ringträgers bewegen");
+
+    controls.append(zoomIn, zoomOut, moveToTarget);
 
     locationSection.insertBefore(controls, mapContainer);
 
@@ -130,6 +135,10 @@ document.addEventListener("DOMContentLoaded", () => {
     zoomOut.addEventListener("click", () => {
       zoom = Math.max(1, zoom - 0.2);
       updateZoom();
+    });
+
+    moveToTarget.addEventListener("click", () => {
+      startMovement(myMarker, moveToTarget);
     });
   }
 
@@ -157,14 +166,44 @@ document.addEventListener("DOMContentLoaded", () => {
     return marker;
   }
 
-  function moveMyMarkerTowardsRing(marker) {
-    const step = 0.12;
+  function startMovement(marker, button) {
+    if (movementStarted || !alarmActive) return;
 
-    myPosition.x += (ringTargetPosition.x - myPosition.x) * step;
-    myPosition.y += (ringTargetPosition.y - myPosition.y) * step;
+    movementStarted = true;
+    button.disabled = true;
+    button.textContent = "Bewegung läuft...";
 
-    marker.style.left = `${myPosition.x}%`;
-    marker.style.top = `${myPosition.y}%`;
+    movementInterval = setInterval(() => {
+      if (!alarmActive) return;
+
+      distance = Math.max(0, distance - 25);
+
+      const progress = 1 - distance / startDistance;
+
+      myPosition.x =
+        myStartPosition.x + (myEndPosition.x - myStartPosition.x) * progress;
+
+      myPosition.y =
+        myStartPosition.y + (myEndPosition.y - myStartPosition.y) * progress;
+
+      marker.style.left = `${myPosition.x}%`;
+      marker.style.top = `${myPosition.y}%`;
+
+      if (distanceText) {
+        distanceText.textContent = `${distance} m entfernt`;
+      }
+
+      marker.classList.add("marker-jump");
+
+      setTimeout(() => {
+        marker.classList.remove("marker-jump");
+      }, 350);
+
+      if (distance <= 0) {
+        clearInterval(movementInterval);
+        button.textContent = "Ziel erreicht";
+      }
+    }, 900);
   }
 
   function updateZoom() {

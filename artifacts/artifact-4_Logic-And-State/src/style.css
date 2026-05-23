@@ -324,8 +324,6 @@ body {
 
 /* JavaScript-Interaktionen */
 
-/* Alarmstatus */
-
 .alarm-status {
   margin: 14px 0 0;
   display: inline-block;
@@ -376,7 +374,7 @@ body {
   animation: alarmHeartbeat 0.85s ease-in-out infinite;
 }
 
-/* Map-Controls außerhalb der Karte */
+/* Map-Controls */
 
 .map-controls {
   display: flex;
@@ -401,6 +399,16 @@ body {
 .map-controls button:hover {
   transform: translateY(-1px);
   background: var(--gold-soft);
+}
+
+.map-controls button:disabled {
+  cursor: default;
+  opacity: 0.72;
+  transform: none;
+}
+
+.move-target-button {
+  background: #c9f0b7;
 }
 
 /* Standortmarker: Ringträger */
