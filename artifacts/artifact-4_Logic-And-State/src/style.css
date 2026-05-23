@@ -296,7 +296,7 @@ body {
     0 2px 0 var(--dark),
     0 0 10px rgba(255, 220, 140, 0.45);
 
-  background: transparent url("../assets/alarm_button_bg.svg") center / 100% 100% no-repeat;
+  background: transparent url("assets/alarm_button_bg.svg") center / 100% 100% no-repeat;
   filter:
     drop-shadow(0 8px 10px rgba(0, 0, 0, 0.45))
     drop-shadow(0 0 10px rgba(255, 214, 120, 0.16));
@@ -304,7 +304,7 @@ body {
 }
 
 .alarm-dismiss-button:hover {
-  background-image: url("../assets/alarm_button_bg_hover.svg");
+  background-image: url("assets/alarm_button_bg_hover.svg");
   transform: translateY(-2px);
   filter:
     drop-shadow(0 11px 14px rgba(0, 0, 0, 0.52))
@@ -312,7 +312,7 @@ body {
 }
 
 .alarm-dismiss-button:active {
-  background-image: url("../assets/alarm_button_bg_pressed.svg");
+  background-image: url("assets/alarm_button_bg_pressed.svg");
   transform: translateY(3px);
   filter:
     drop-shadow(0 4px 6px rgba(0, 0, 0, 0.45))
