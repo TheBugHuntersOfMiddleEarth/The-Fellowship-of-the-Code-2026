@@ -3,20 +3,48 @@ document.addEventListener("DOMContentLoaded", () => {
   const dismissButton = document.querySelector(".alarm-dismiss-button");
   const alarmNote = document.querySelector(".alarm-note");
   const mapContainer = document.querySelector("#map");
+  const mapImage = document.querySelector(".map-image");
   const ringSymbol = document.querySelector(".ring-symbol");
   const healthIcon = document.querySelector(".health-icon");
+  const distanceText = document.querySelector(".location-header p");
+  const headerText = document.querySelector(".alarm-header-text");
 
-  if (!alarmScreen || !dismissButton || !mapContainer) return;
+  if (!alarmScreen || !dismissButton || !mapContainer || !mapImage) return;
 
   let alarmActive = true;
+  let distance = 250;
+  let zoom = 1;
 
-  addStatusText();
+  addAlarmStatus();
   addMapMarker();
-  addCenterButton();
+  addMapControls();
 
-  alarmScreen.classList.add("alarm-is-active");
+  alarmScreen.classList.add("alarm-is-ringing");
   ringSymbol?.classList.add("alarm-pulse");
   healthIcon?.classList.add("alarm-heartbeat");
+
+  const distanceInterval = setInterval(() => {
+    if (!alarmActive) return;
+
+    distance = Math.max(40, distance - 10);
+
+    if (distanceText) {
+      distanceText.textContent = `${distance} m entfernt`;
+    }
+
+    const marker = document.querySelector(".ring-location-marker");
+    if (marker) {
+      marker.classList.add("marker-jump");
+
+      setTimeout(() => {
+        marker.classList.remove("marker-jump");
+      }, 350);
+    }
+
+    if (distance <= 40) {
+      clearInterval(distanceInterval);
+    }
+  }, 2500);
 
   dismissButton.addEventListener("click", () => {
     if (!alarmActive) return;
@@ -26,8 +54,9 @@ document.addEventListener("DOMContentLoaded", () => {
     if (!confirmed) return;
 
     alarmActive = false;
+    clearInterval(distanceInterval);
 
-    alarmScreen.classList.remove("alarm-is-active");
+    alarmScreen.classList.remove("alarm-is-ringing");
     alarmScreen.classList.add("alarm-is-dismissed");
 
     ringSymbol?.classList.remove("alarm-pulse");
@@ -36,9 +65,9 @@ document.addEventListener("DOMContentLoaded", () => {
     dismissButton.textContent = "Alarm ausgeschaltet";
     dismissButton.disabled = true;
 
-    const statusText = document.querySelector("#alarm-status");
-    if (statusText) {
-      statusText.textContent = "Alarm bestätigt";
+    const status = document.querySelector("#alarm-status");
+    if (status) {
+      status.textContent = "Alarm bestätigt";
     }
 
     if (alarmNote) {
@@ -47,14 +76,15 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  function addStatusText() {
+  function addAlarmStatus() {
+    if (!headerText) return;
+
     const status = document.createElement("p");
     status.id = "alarm-status";
     status.className = "alarm-status";
     status.textContent = "Alarm aktiv";
 
-    const header = document.querySelector(".alarm-header-text");
-    header?.appendChild(status);
+    headerText.appendChild(status);
   }
 
   function addMapMarker() {
@@ -65,20 +95,54 @@ document.addEventListener("DOMContentLoaded", () => {
     mapContainer.appendChild(marker);
   }
 
-  function addCenterButton() {
-    const centerButton = document.createElement("button");
-    centerButton.type = "button";
-    centerButton.className = "map-center-button";
-    centerButton.textContent = "Standort anzeigen";
+  function addMapControls() {
+    const controls = document.createElement("div");
+    controls.className = "map-controls";
 
-    mapContainer.appendChild(centerButton);
+    const zoomIn = document.createElement("button");
+    zoomIn.type = "button";
+    zoomIn.textContent = "+";
+    zoomIn.setAttribute("aria-label", "Karte vergrößern");
 
-    centerButton.addEventListener("click", () => {
-      mapContainer.scrollTo({
-        left: mapContainer.scrollWidth / 2 - mapContainer.clientWidth / 2,
-        top: mapContainer.scrollHeight / 2 - mapContainer.clientHeight / 2,
-        behavior: "smooth"
-      });
+    const zoomOut = document.createElement("button");
+    zoomOut.type = "button";
+    zoomOut.textContent = "−";
+    zoomOut.setAttribute("aria-label", "Karte verkleinern");
+
+    const center = document.createElement("button");
+    center.type = "button";
+    center.textContent = "Standort anzeigen";
+
+    controls.append(zoomIn, zoomOut, center);
+    mapContainer.appendChild(controls);
+
+    zoomIn.addEventListener("click", () => {
+      zoom = Math.min(1.8, zoom + 0.2);
+      updateZoom();
+    });
+
+    zoomOut.addEventListener("click", () => {
+      zoom = Math.max(1, zoom - 0.2);
+      updateZoom();
+    });
+
+    center.addEventListener("click", () => {
+      centerMap();
+    });
+  }
+
+  function updateZoom() {
+    mapImage.style.transform = `scale(${zoom})`;
+    mapImage.style.transformOrigin = "center center";
+
+    centerMap();
+  }
+
+  function centerMap() {
+    mapContainer.scrollTo({
+      left: mapContainer.scrollWidth / 2 - mapContainer.clientWidth / 2,
+      top: mapContainer.scrollHeight / 2 - mapContainer.clientHeight / 2,
+      behavior: "smooth"
     });
   }
 });
