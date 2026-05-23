@@ -2,22 +2,28 @@ document.addEventListener("DOMContentLoaded", () => {
   const alarmScreen = document.querySelector(".ring-alarm-screen");
   const dismissButton = document.querySelector(".alarm-dismiss-button");
   const alarmNote = document.querySelector(".alarm-note");
+
+  const locationSection = document.querySelector(".location-section");
   const mapContainer = document.querySelector("#map");
   const mapImage = document.querySelector(".map-image");
+  const distanceText = document.querySelector(".location-header p");
+
   const ringSymbol = document.querySelector(".ring-symbol");
   const healthIcon = document.querySelector(".health-icon");
-  const distanceText = document.querySelector(".location-header p");
   const headerText = document.querySelector(".alarm-header-text");
 
-  if (!alarmScreen || !dismissButton || !mapContainer || !mapImage) return;
+  if (!alarmScreen || !dismissButton || !locationSection || !mapContainer || !mapImage) {
+    return;
+  }
 
   let alarmActive = true;
   let distance = 250;
   let zoom = 1;
 
   addAlarmStatus();
-  addMapMarker();
   addMapControls();
+  addMapMarker();
+  centerMap();
 
   alarmScreen.classList.add("alarm-is-ringing");
   ringSymbol?.classList.add("alarm-pulse");
@@ -33,6 +39,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     const marker = document.querySelector(".ring-location-marker");
+
     if (marker) {
       marker.classList.add("marker-jump");
 
@@ -66,6 +73,7 @@ document.addEventListener("DOMContentLoaded", () => {
     dismissButton.disabled = true;
 
     const status = document.querySelector("#alarm-status");
+
     if (status) {
       status.textContent = "Alarm bestätigt";
     }
@@ -87,14 +95,6 @@ document.addEventListener("DOMContentLoaded", () => {
     headerText.appendChild(status);
   }
 
-  function addMapMarker() {
-    const marker = document.createElement("div");
-    marker.className = "ring-location-marker";
-    marker.setAttribute("aria-label", "Standort des Ringträgers");
-
-    mapContainer.appendChild(marker);
-  }
-
   function addMapControls() {
     const controls = document.createElement("div");
     controls.className = "map-controls";
@@ -112,9 +112,11 @@ document.addEventListener("DOMContentLoaded", () => {
     const center = document.createElement("button");
     center.type = "button";
     center.textContent = "Standort anzeigen";
+    center.setAttribute("aria-label", "Standort des Ringträgers anzeigen");
 
     controls.append(zoomIn, zoomOut, center);
-    mapContainer.appendChild(controls);
+
+    locationSection.insertBefore(controls, mapContainer);
 
     zoomIn.addEventListener("click", () => {
       zoom = Math.min(1.8, zoom + 0.2);
@@ -129,6 +131,14 @@ document.addEventListener("DOMContentLoaded", () => {
     center.addEventListener("click", () => {
       centerMap();
     });
+  }
+
+  function addMapMarker() {
+    const marker = document.createElement("div");
+    marker.className = "ring-location-marker";
+    marker.setAttribute("aria-label", "Standort des Ringträgers");
+
+    mapContainer.appendChild(marker);
   }
 
   function updateZoom() {
