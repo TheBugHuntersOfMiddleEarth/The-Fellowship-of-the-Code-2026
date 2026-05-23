@@ -79,14 +79,12 @@ The Fellowship Companion is a **evolving digital tool** we build together. It is
 
 
 Version 0.1: 
-
 - setting up the repository
 - creating artifact and chapter files
 - working on artifact 1
 - creating chapter I of the Red Book and sharing artifact 1
 
 Version 0.2:
-
 - Simplify changelog section in README.md
 - creating flowchart status monitoring capability
 - creating a wireframe for the Ring Alert
@@ -94,14 +92,14 @@ Version 0.2:
 - creating chapter II of the Red Book and sharing artifact 2
 - adding Bonus-Content
 
-Version 0.3:
+Version 0.3: 
+- creating a static interface of a triggered ring alarm
+- adding design to it
+- adding some bonus content
 
--creating a static interface of a triggered ring alarm
--adding design to it
--adding some bonus content
+Version 0.4: 
+- implementing logic to our interface
 
-Version 0.4:
 
--implementic logic to our interface
 
 
