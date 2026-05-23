@@ -20,38 +20,47 @@ document.addEventListener("DOMContentLoaded", () => {
   let distance = 250;
   let zoom = 1;
 
+  const ringTargetPosition = {
+    x: 54,
+    y: 48
+  };
+
+  const myPosition = {
+    x: 24,
+    y: 74
+  };
+
   addAlarmStatus();
   addMapControls();
-  addMapMarker();
+  addRingMarker();
+  const myMarker = addMyMarker();
   centerMap();
 
   alarmScreen.classList.add("alarm-is-ringing");
   ringSymbol?.classList.add("alarm-pulse");
   healthIcon?.classList.add("alarm-heartbeat");
 
-  const distanceInterval = setInterval(() => {
+  const movementInterval = setInterval(() => {
     if (!alarmActive) return;
 
-    distance = Math.max(40, distance - 10);
+    moveMyMarkerTowardsRing(myMarker);
+
+    distance = Math.max(40, distance - 12);
 
     if (distanceText) {
       distanceText.textContent = `${distance} m entfernt`;
     }
 
-    const marker = document.querySelector(".ring-location-marker");
+    myMarker.classList.add("marker-jump");
 
-    if (marker) {
-      marker.classList.add("marker-jump");
-
-      setTimeout(() => {
-        marker.classList.remove("marker-jump");
-      }, 350);
-    }
+    setTimeout(() => {
+      myMarker.classList.remove("marker-jump");
+    }, 350);
 
     if (distance <= 40) {
-      clearInterval(distanceInterval);
+      clearInterval(movementInterval);
     }
-  }, 2500);
+  }, 1800);
 
   dismissButton.addEventListener("click", () => {
     if (!alarmActive) return;
@@ -61,7 +70,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (!confirmed) return;
 
     alarmActive = false;
-    clearInterval(distanceInterval);
+    clearInterval(movementInterval);
 
     alarmScreen.classList.remove("alarm-is-ringing");
     alarmScreen.classList.add("alarm-is-dismissed");
@@ -109,12 +118,7 @@ document.addEventListener("DOMContentLoaded", () => {
     zoomOut.textContent = "−";
     zoomOut.setAttribute("aria-label", "Karte verkleinern");
 
-    const center = document.createElement("button");
-    center.type = "button";
-    center.textContent = "Standort anzeigen";
-    center.setAttribute("aria-label", "Standort des Ringträgers anzeigen");
-
-    controls.append(zoomIn, zoomOut, center);
+    controls.append(zoomIn, zoomOut);
 
     locationSection.insertBefore(controls, mapContainer);
 
@@ -127,18 +131,40 @@ document.addEventListener("DOMContentLoaded", () => {
       zoom = Math.max(1, zoom - 0.2);
       updateZoom();
     });
-
-    center.addEventListener("click", () => {
-      centerMap();
-    });
   }
 
-  function addMapMarker() {
+  function addRingMarker() {
     const marker = document.createElement("div");
     marker.className = "ring-location-marker";
     marker.setAttribute("aria-label", "Standort des Ringträgers");
 
+    marker.style.left = `${ringTargetPosition.x}%`;
+    marker.style.top = `${ringTargetPosition.y}%`;
+
     mapContainer.appendChild(marker);
+  }
+
+  function addMyMarker() {
+    const marker = document.createElement("div");
+    marker.className = "my-location-marker";
+    marker.setAttribute("aria-label", "Mein Standort");
+
+    marker.style.left = `${myPosition.x}%`;
+    marker.style.top = `${myPosition.y}%`;
+
+    mapContainer.appendChild(marker);
+
+    return marker;
+  }
+
+  function moveMyMarkerTowardsRing(marker) {
+    const step = 0.12;
+
+    myPosition.x += (ringTargetPosition.x - myPosition.x) * step;
+    myPosition.y += (ringTargetPosition.y - myPosition.y) * step;
+
+    marker.style.left = `${myPosition.x}%`;
+    marker.style.top = `${myPosition.y}%`;
   }
 
   function updateZoom() {
