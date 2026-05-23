@@ -40,8 +40,8 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
   /*
-    Der grüne Marker bewegt sich bis knapp neben den roten Marker.
-    So bleibt bei 0 m Entfernung trotzdem sichtbar, dass es zwei Marker gibt.
+    Der grüne Marker endet bewusst knapp neben dem roten Marker.
+    So sind bei 0 m Entfernung weiterhin beide Marker sichtbar.
   */
   const myEndPosition = {
     x: ringTargetPosition.x - 4,
@@ -67,10 +67,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     alarmActive = false;
 
-    if (movementInterval) {
-      clearInterval(movementInterval);
-    }
-
     alarmScreen.classList.remove("alarm-is-ringing");
     alarmScreen.classList.add("alarm-is-dismissed");
 
@@ -88,7 +84,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (alarmNote) {
       alarmNote.textContent =
-        "Der Alarm wurde ausgeschaltet. Alle Gruppenmitglieder wurden informiert.";
+        "Der Alarm wurde ausgeschaltet. Die Karte bleibt zur Navigation verfügbar.";
     }
   });
 
@@ -167,15 +163,13 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function startMovement(marker, button) {
-    if (movementStarted || !alarmActive) return;
+    if (movementStarted) return;
 
     movementStarted = true;
     button.disabled = true;
     button.textContent = "Bewegung läuft...";
 
     movementInterval = setInterval(() => {
-      if (!alarmActive) return;
-
       distance = Math.max(0, distance - 25);
 
       const progress = 1 - distance / startDistance;
