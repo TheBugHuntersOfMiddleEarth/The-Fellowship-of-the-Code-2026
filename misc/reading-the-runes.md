@@ -30,8 +30,6 @@ Da die Variablen aber nicht als Number sondern als String definiert sind, löst 
 
 ### Why does it matter?
 
-*`How it affects the user experience; How could it cause bugs later; Why would it be risky in a larger system?`*
-
 Der Code ist in dieser Hinsicht zwar syntaktisch vollkommen richtig, aber dennoch semantisch komplett falsch. Durch diese offensichtlich falschen Berechnungen ist die App unbrauchbar für den User, weil kein Verlass auf die Ergebnisse ist. Selbst wenn der User weiß, dass es ein Problem mit den Additionen gibt und er deshalb nur eine Entnahme eingeben möchte, kann er sich nicht darauf verlassen, dass der Ausgangswert richtig ist. Außerdem wird der User durch die fehlerhafte Anzeige evtl falsche Entscheidungen treffen. Wenn man denkt, man hat noch 103 Rationen übrig, wird man ganz andere Dinge priorisieren, als wenn man weiß man hat nur mehr 13 Rationen, was eigentlich korrekt wäre. Das kann fatale Folgen haben. 
 
 Noch größer wird das Problem, wenn vielleicht andere Systeme an die App angebunden sind bzw mit diesen Daten arbeiten. Dann werden durch die falsche Anzeige in der App alle Folgeprozesse mit falschen Werten arbeiten und vermutlich nicht richtig funktionieren. So könnten zum Beispiel Warnmeldungen nicht ausgelöst werden, weil von einem viel höheren Stand ausgegangen wird, als eigentlich richtig ist. 
@@ -72,8 +70,6 @@ Aktuell passiert es genau umgekehrt. Der Button wird geklickt und direkt danach 
 
 ### Why does it matter?
 
-*`How it affects the user experience; How could it cause bugs later; Why would it be risky in a larger system?`*
-
 Es macht auf den ersten Blick den Eindruck, dass die App auf die Eingabe nicht reagiert. Das kann dazu führen, dass der User mehrfach klickt, da er denkt die erste Eingabe wurde nicht übernommen. Dadurch erfolgt dann aber immer wieder eine weitere Entnahme, wodurch den Endstand erst wieder fehlerhaft wird. Wie auch schon beim ersten Fehler kann das auf lange Sicht zu Problemen führen, weil dadurch mit falschen Werte weitergearbeitet werden könnte. Dieser Fehler ist aber im Nachhinein kaum noch nachvollziehbar. 
 
 ### Possible fixes
@@ -83,8 +79,6 @@ Ein einfacher Fix wäre es den Befehl "updateStatus()" erst nach der IF-Funktion
 ---
 
 ## AI Assistance
-
-*`What did you ask the AI?; What was helpful?; What was misleading?; What did you have to decide yourself?`*
 
 Man hat die Fehler beim Testen der Datei ziemlich leicht selbst gefunden, da sie offensichtlich sind. Die KI hat aber gut geholfen, die Fehler im Detail zu analysieren und zu verstehen, wo genau der Code falsch ist. Ohne Erfahrung ist es schon schwer den Code sinnerfassend zu lesen, dann auch noch Fehler zu finden ist noch schwerer. Die KI war hier also eine große Erleichterung. Bei der Beantwortung der Frage, warum die Fehler bedeutend sind, hat die KI auch gut helfen können, da sie einen guten Überblick über die möglichen Problemstellungen gibt. Wie immer gibt die KI aber im ersten Anlauf aber sehr viel Info her und wird teilweise zu komplex und überfordernd. Man muss also trotzdem noch selbst entscheiden, was wirklich die entscheidendsten Fehler sind. Auch eine ordentliche Fehlerbeschreibung muss man selsbt machen. Die KI gibt hier zwar einen ganz guten Ausgangspunkt, ist aber sicher nicht optimal. 
 
