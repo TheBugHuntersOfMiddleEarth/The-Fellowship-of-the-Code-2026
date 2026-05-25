@@ -1,6 +1,6 @@
 # The Red Book of Westmarch - Chapter IV: When Things React
 
-*`LOTR Quote relevant to the assignment or artifact` `"..." - Character`*
+*"Auch der kleinste Mensch kann den Lauf der Zukunfz verändern." - Galadriel*
 
 **Table of Contents**
 
