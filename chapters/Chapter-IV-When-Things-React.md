@@ -32,7 +32,7 @@ Dieses Kapitel konzentriert sich auf die Ergänzung von Javascript Code zum stat
 
 **Build:**
 
-[Html-Interface](../artifacts/artifact-4_Logic-And-State/src/interface.hmtl)
+[Html-Interface](../artifacts/artifact-4_Logic-And-State/src/interface.html)
 
 [Css-Stylesheet](../artifacts/artifact-4_Logic-And-State/src/style.css)
 
