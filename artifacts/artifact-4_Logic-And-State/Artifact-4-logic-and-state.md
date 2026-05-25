@@ -1,4 +1,4 @@
-# The Fellowship Companion - Artifact 3: Representation of Ring-Alarm
+# The Fellowship Companion - Artifact 4: Logic & State
 
 **Table of Contents**
 
