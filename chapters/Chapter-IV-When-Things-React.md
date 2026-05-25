@@ -1,6 +1,6 @@
 # The Red Book of Westmarch - Chapter IV: When Things React
 
-*"Auch der kleinste Mensch kann den Lauf der Zukunfz verändern." - Galadriel*
+*"Auch der kleinste Mensch kann den Lauf der Zukunft verändern." - Galadriel*
 
 **Table of Contents**
 
