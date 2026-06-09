@@ -1,0 +1,65 @@
+/* Farben der Mittelerde */
+body{
+font-family: Arial, sans-serif;
+max-width:800px;
+margin:auto;
+padding:20px;
+background:#f4f1e8;      /* Pergament */
+color:#2f4f2f;           /* Auenland */
+}
+
+/* Goldener Ring-Effekt */
+header{
+text-align:center;
+border-bottom:3px solid #c9a227;
+}
+
+/* Karten-Look */
+section{
+background:white;
+margin:15px 0;
+padding:15px;
+border-radius:8px;
+}
+
+/* Waldgrüne Überschriften */
+h1,h2{
+color:#556b2f;
+}
+
+/* Tabelle */
+table{
+width:100%;
+border-collapse:collapse;
+}
+
+/* Tabellenzellen */
+th,td{
+border:1px solid #ddd;
+padding:8px;
+}
+
+/* Eingaben */
+input{
+padding:8px;
+}
+
+/* Ring-inspirierter Button */
+button{
+background:#c9a227;
+border:none;
+padding:8px 12px;
+cursor:pointer;
+}
+
+/* Hover-Effekt */
+button:hover{
+opacity:.8;
+}
+
+/* Fußbereich */
+footer{
+text-align:center;
+margin-top:20px;
+font-style:italic;
+}
