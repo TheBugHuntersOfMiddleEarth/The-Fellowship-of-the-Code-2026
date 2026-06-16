@@ -1,0 +1,401 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --border: #111;
+  --background: #f6f3eb;
+  --card: #fffdf7;
+  --soft-card: #fdf8ed;
+  --text: #151515;
+  --muted: #5f5f5f;
+  --danger: #b62222;
+  --success: #2e7d32;
+  --warning: #9a6a00;
+  --shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--text);
+  background: radial-gradient(circle at top, #fff, var(--background));
+}
+
+.app-shell {
+  width: min(1160px, calc(100% - 32px));
+  margin: 28px auto;
+  border: 3px solid var(--border);
+  background: rgba(255, 255, 255, 0.72);
+  box-shadow: var(--shadow);
+}
+
+.app-header {
+  display: grid;
+  grid-template-columns: 48px 1fr 48px;
+  align-items: center;
+  min-height: 68px;
+  border-bottom: 3px solid var(--border);
+  background: #fff;
+}
+
+.app-header h1 {
+  margin: 0;
+  text-align: center;
+  font-size: clamp(1.45rem, 3vw, 2rem);
+}
+
+.back-button,
+.menu-button {
+  border: 0;
+  background: transparent;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+.menu-button {
+  display: none;
+}
+
+.dashboard {
+  padding: 22px 58px 14px;
+  display: grid;
+  grid-template-columns: 1fr 1.25fr;
+  gap: 16px 26px;
+}
+
+.card,
+.inventory-card {
+  border: 3px solid var(--border);
+  background: var(--card);
+  padding: 12px;
+}
+
+.card h2,
+.ration-status h2,
+.inventory-card h2 {
+  margin: 0 0 8px;
+  font-size: 1.32rem;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 130px 1fr;
+  align-items: center;
+  gap: 10px 12px;
+  margin-bottom: 14px;
+}
+
+label {
+  font-weight: 700;
+}
+
+input {
+  width: 100%;
+  min-height: 35px;
+  padding: 5px 10px;
+  border: 2px solid var(--border);
+  background: #fff;
+  font-size: 1rem;
+}
+
+button {
+  font-family: inherit;
+  font-weight: 700;
+}
+
+.primary-button,
+.save-button {
+  display: block;
+  margin: 0 auto;
+  padding: 8px 18px;
+  border: 3px solid var(--border);
+  border-radius: 10px;
+  background: #fff;
+  box-shadow: inset 0 -2px 0 rgba(0, 0, 0, 0.12);
+  cursor: pointer;
+  text-transform: uppercase;
+}
+
+.primary-button:hover,
+.save-button:hover,
+.action-button:hover {
+  background: #f0f0f0;
+}
+
+.hint {
+  min-height: 20px;
+  margin: 10px 0 0;
+  color: var(--muted);
+  font-size: 0.92rem;
+  text-align: center;
+}
+
+.weather-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 8px;
+  font-size: 1.05rem;
+}
+
+.ration-status {
+  grid-column: 1 / -1;
+}
+
+.status-box {
+  min-height: 44px;
+  border: 3px solid var(--border);
+  background: #fff;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 14px;
+  font-size: 1.05rem;
+  font-weight: 700;
+}
+
+.status-dot {
+  width: 22px;
+  height: 22px;
+  border: 2px solid var(--border);
+  border-radius: 50%;
+  background: var(--warning);
+  flex: 0 0 auto;
+}
+
+.status-box.ok .status-dot {
+  background: var(--success);
+}
+
+.status-box.warning .status-dot {
+  background: var(--danger);
+}
+
+.status-box.neutral .status-dot {
+  background: var(--warning);
+}
+
+.inventory-card {
+  grid-column: 1 / -1;
+}
+
+.inventory-table {
+  width: 100%;
+  border: 2px solid var(--border);
+  background: #fff;
+}
+
+.table-row {
+  display: grid;
+  grid-template-columns: 1.55fr 1fr 0.9fr;
+  align-items: center;
+  min-height: 42px;
+  border-bottom: 2px solid var(--border);
+}
+
+.table-row:last-child {
+  border-bottom: 0;
+}
+
+.table-header {
+  background: #f0f0f0;
+  font-weight: 800;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.table-row > div {
+  padding: 7px 12px;
+  min-height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.table-row > div:not(:last-child) {
+  border-right: 2px solid var(--border);
+}
+
+.item-name {
+  gap: 8px;
+  font-weight: 700;
+}
+
+.item-name.child {
+  padding-left: 44px;
+  font-weight: 600;
+}
+
+.item-name.child::before {
+  content: "└";
+  margin-right: 2px;
+  color: var(--muted);
+}
+
+.stock-cell {
+  justify-content: center;
+  gap: 6px;
+  font-weight: 700;
+}
+
+.actions-cell {
+  justify-content: center;
+  gap: 10px;
+}
+
+.action-button {
+  width: 34px;
+  height: 30px;
+  border: 2px solid var(--border);
+  background: #fff;
+  border-radius: 4px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  line-height: 1;
+}
+
+.group-row {
+  background: var(--soft-card);
+}
+
+.group-row .stock-cell,
+.group-row .actions-cell {
+  color: var(--muted);
+}
+
+.save-button {
+  margin-top: 12px;
+  text-transform: none;
+  min-width: 230px;
+}
+
+@media (max-width: 760px) {
+  .app-shell {
+    width: min(430px, calc(100% - 18px));
+    margin: 10px auto;
+  }
+
+  .app-header {
+    grid-template-columns: 42px 1fr 42px;
+    min-height: 54px;
+  }
+
+  .back-button {
+    visibility: hidden;
+  }
+
+  .menu-button {
+    display: block;
+    font-size: 1.75rem;
+  }
+
+  .dashboard {
+    grid-template-columns: 1fr;
+    gap: 10px;
+    padding: 10px 10px 14px;
+  }
+
+  .card,
+  .inventory-card {
+    padding: 8px;
+  }
+
+  .card h2,
+  .ration-status h2,
+  .inventory-card h2 {
+    font-size: 1.02rem;
+  }
+
+  .form-grid {
+    grid-template-columns: 95px 1fr;
+    gap: 7px;
+    margin-bottom: 9px;
+  }
+
+  input {
+    min-height: 30px;
+    font-size: 0.93rem;
+  }
+
+  .weather-list,
+  .status-box {
+    font-size: 0.92rem;
+  }
+
+  .status-box {
+    min-height: 36px;
+    padding: 6px 9px;
+  }
+
+  .status-dot {
+    width: 20px;
+    height: 20px;
+  }
+
+  .inventory-table {
+    border: 3px solid var(--border);
+  }
+
+  .table-header {
+    display: none;
+  }
+
+  .table-row {
+    grid-template-columns: 1.55fr 0.65fr 74px;
+    min-height: 34px;
+    border-bottom: 0;
+  }
+
+  .table-row > div {
+    padding: 4px 5px;
+    border-right: 0 !important;
+  }
+
+  .item-name {
+    font-size: 0.88rem;
+  }
+
+  .item-name.child {
+    padding-left: 26px;
+  }
+
+  .stock-cell {
+    justify-content: flex-end;
+    font-size: 0.88rem;
+  }
+
+  .actions-cell {
+    gap: 6px;
+  }
+
+  .action-button {
+    width: 28px;
+    height: 26px;
+    font-size: 1rem;
+  }
+
+  .group-row {
+    margin-top: 6px;
+  }
+
+  .group-row .stock-cell,
+  .group-row .actions-cell {
+    display: none;
+  }
+
+  .group-row .item-name {
+    grid-column: 1 / -1;
+    font-size: 0.9rem;
+    padding-top: 6px;
+    padding-bottom: 0;
+  }
+
+  .save-button {
+    min-width: 210px;
+    margin-top: 10px;
+  }
+}
