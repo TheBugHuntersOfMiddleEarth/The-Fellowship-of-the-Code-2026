@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Inventar Interface</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <header class="app-header">
+      <button class="back-button" type="button" aria-label="Zurück">←</button>
+      <h1>[ 🏰 Inventar ]</h1>
+      <button class="menu-button" type="button" aria-label="Menü">☰</button>
+    </header>
+
+    <main class="dashboard">
+      <section class="card parameter-card" aria-labelledby="parameter-title">
+        <h2 id="parameter-title">Reiseparameter</h2>
+
+        <div class="form-grid">
+          <label for="locationInput">Region / Ort:</label>
+          <input id="locationInput" type="text" placeholder="z. B. Wien" autocomplete="off" />
+
+          <label for="groupSizeInput">Gefährten:</label>
+          <input id="groupSizeInput" type="number" min="1" step="1" placeholder="z. B. 9" />
+        </div>
+
+        <button id="saveParametersButton" class="primary-button" type="button">
+          Parameter speichern
+        </button>
+
+        <p id="parameterHint" class="hint" aria-live="polite"></p>
+      </section>
+
+      <section class="card weather-card" aria-labelledby="weather-title">
+        <h2 id="weather-title">Wetterlage & berechneter Verbrauch</h2>
+
+        <ul class="weather-list">
+          <li><span aria-hidden="true">🌦️</span> <strong>Wetter:</strong> <span id="weatherText">Noch nicht abgerufen</span></li>
+          <li><span aria-hidden="true">⏳</span> <strong>Wetterfaktor:</strong> <span id="factorText">Wasser ×1 / Nahrung ×1</span></li>
+          <li><span aria-hidden="true">💧</span> <strong>Berechneter Wasserverbrauch:</strong> <span id="waterConsumptionText">0 L</span></li>
+          <li><span aria-hidden="true">🍞</span> <strong>Berechneter Nahrungsverbrauch:</strong> <span id="foodConsumptionText">0 R</span></li>
+        </ul>
+      </section>
+
+      <section class="ration-status" aria-labelledby="status-title">
+        <h2 id="status-title">Rationen-Status</h2>
+        <div id="statusBox" class="status-box neutral" aria-live="polite">
+          <span class="status-dot" aria-hidden="true"></span>
+          <span id="statusText">Bitte Standort und Gruppengröße eingeben.</span>
+        </div>
+      </section>
+
+      <section class="inventory-card" aria-labelledby="inventory-title">
+        <h2 id="inventory-title">Ausrüstung & Inventar verwalten</h2>
+
+        <div class="inventory-table" role="table" aria-label="Inventarbestand">
+          <div class="table-row table-header" role="row">
+            <div role="columnheader">Gegenstand / Kategorie</div>
+            <div role="columnheader">Aktueller Bestand</div>
+            <div role="columnheader">Aktionen</div>
+          </div>
+
+          <div id="inventoryRows"></div>
+        </div>
+
+        <button id="saveInventoryButton" class="save-button" type="button">
+          💾 Bestand sichern
+        </button>
+
+        <p id="saveHint" class="hint" aria-live="polite"></p>
+      </section>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
