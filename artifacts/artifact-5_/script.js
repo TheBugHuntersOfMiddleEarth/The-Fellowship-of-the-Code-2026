@@ -1,5 +1,5 @@
-// Trage hier deinen echten OpenWeather API Key ein.
-const OPEN_WEATHER_API_KEY = "cf116e749aa62767c6001ce6f801d4c9";
+// Trage hier deinen echten OpenWeather API-Key ein.
+const OPEN_WEATHER_API_KEY = "DEIN_OPENWEATHER_API_KEY";
 
 const STORAGE_KEY_INVENTORY = "inventar-interface-bestand-v1";
 const STORAGE_KEY_PARAMETERS = "inventar-interface-parameter-v1";
@@ -7,11 +7,11 @@ const STORAGE_KEY_PARAMETERS = "inventar-interface-parameter-v1";
 const BASE_WATER_PER_PERSON = 3; // 3 Liter Wasser pro Gefährte und Tag
 const BASE_FOOD_PER_PERSON = 2;  // 2 Rationen Nahrung pro Gefährte und Tag
 
-// Herr-der-Ringe-Orte werden mit realen Wetterorten verknüpft.
-// Die Koordinaten werden direkt für die OpenWeather API verwendet.
+// Herr-der-Ringe-Orte werden intern mit realen Wetterorten verknüpft.
+// Die realen Orte werden nicht im Interface angezeigt.
 const middleEarthLocations = {
   shire: {
-    label: "Auenland / Hobbingen",
+    label: "Auenland",
     realPlace: "Matamata / Hobbiton, Neuseeland",
     lat: -37.8721,
     lon: 175.6829
@@ -23,13 +23,13 @@ const middleEarthLocations = {
     lon: 175.1667
   },
   mordor: {
-    label: "Mordor / Schicksalsberg",
+    label: "Mordor",
     realPlace: "Tongariro National Park, Neuseeland",
     lat: -39.1568,
     lon: 175.6321
   },
   rohan: {
-    label: "Rohan / Edoras",
+    label: "Rohan",
     realPlace: "Mount Sunday, Canterbury, Neuseeland",
     lat: -43.5309,
     lon: 170.8992
@@ -45,13 +45,17 @@ const middleEarthLocations = {
 const defaultInventory = [
   { id: "water", label: "Wasser", icon: "💧", amount: 30, unit: "L", type: "item" },
   { id: "food", label: "Nahrung", icon: "🍞", amount: 45, unit: "R", type: "item" },
+
   { id: "weapons", label: "Waffen", icon: "⚔️", type: "group" },
   { id: "bows", label: "Bögen", icon: "", amount: 3, unit: "St.", type: "child" },
   { id: "swords", label: "Schwerter", icon: "", amount: 9, unit: "St.", type: "child" },
+
   { id: "armor", label: "Rüstung", icon: "🛡️", amount: 7, unit: "St.", type: "item" },
+
   { id: "misc", label: "Sonstige Ausrüstung", icon: "🎒", type: "group" },
   { id: "torches", label: "Fackeln", icon: "", amount: 8, unit: "St.", type: "child" },
   { id: "coats", label: "Mäntel", icon: "", amount: 4, unit: "St.", type: "child" },
+
   { id: "medical", label: "Medizinische Ausrüstung", icon: "💼", type: "group" },
   { id: "bandages", label: "Verbände", icon: "", amount: 5, unit: "St.", type: "child" },
   { id: "herbs", label: "Heilkräuter", icon: "", amount: 7, unit: "St.", type: "child" }
@@ -61,7 +65,6 @@ let inventory = loadInventory();
 
 let weatherState = {
   text: "Noch nicht abgerufen",
-  realPlace: "Noch nicht ausgewählt",
   main: "Normal",
   waterFactor: 1,
   foodFactor: 1,
@@ -78,7 +81,6 @@ const saveInventoryButton = document.querySelector("#saveInventoryButton");
 const parameterHint = document.querySelector("#parameterHint");
 const saveHint = document.querySelector("#saveHint");
 const weatherText = document.querySelector("#weatherText");
-const realPlaceText = document.querySelector("#realPlaceText");
 const factorText = document.querySelector("#factorText");
 const waterConsumptionText = document.querySelector("#waterConsumptionText");
 const foodConsumptionText = document.querySelector("#foodConsumptionText");
@@ -98,16 +100,6 @@ groupSizeInput.addEventListener("input", () => {
   updateStatus();
 });
 
-locationInput.addEventListener("change", () => {
-  const selectedLocation = middleEarthLocations[locationInput.value];
-
-  if (selectedLocation) {
-    realPlaceText.textContent = selectedLocation.realPlace;
-  } else {
-    realPlaceText.textContent = "Noch nicht ausgewählt";
-  }
-});
-
 async function handleSaveParameters() {
   const locationKey = locationInput.value;
   const selectedLocation = middleEarthLocations[locationKey];
@@ -119,6 +111,7 @@ async function handleSaveParameters() {
   }
 
   saveParametersToStorage(locationKey, groupSize);
+
   parameterHint.textContent = "Wetter wird über OpenWeather abgerufen ...";
 
   try {
@@ -151,6 +144,7 @@ function renderInventory() {
 
   inventory.forEach((entry) => {
     const row = document.createElement("div");
+
     row.className = `table-row ${entry.type === "group" ? "group-row" : ""}`;
     row.setAttribute("role", "row");
 
@@ -228,7 +222,7 @@ async function fetchWeather(selectedLocation) {
   if (!apiKeyIsConfigured()) {
     return {
       fantasyPlace: selectedLocation.label,
-      realPlace: `${selectedLocation.realPlace} Demo-Modus, kein API-Key eingetragen`,
+      realPlace: selectedLocation.realPlace,
       main: "Clear",
       description: "sonnig"
     };
@@ -245,7 +239,13 @@ async function fetchWeather(selectedLocation) {
   const weatherResponse = await fetch(weatherUrl);
 
   if (!weatherResponse.ok) {
-    throw new Error("Die Wetterdaten konnten nicht geladen werden. Bitte prüfe deinen OpenWeather API-Key.");
+    const errorData = await weatherResponse.json().catch(() => null);
+
+    throw new Error(
+      `OpenWeather Fehler ${weatherResponse.status}: ${
+        errorData?.message || "Die Wetterdaten konnten nicht geladen werden."
+      }`
+    );
   }
 
   const weatherData = await weatherResponse.json();
@@ -296,7 +296,6 @@ function buildWeatherState(weatherData) {
 
   return {
     text: `${typeLabel}: ${capitalize(weatherData.description)}`,
-    realPlace: weatherData.realPlace,
     main: weatherData.main,
     waterFactor,
     foodFactor,
@@ -319,7 +318,6 @@ function calculateAndRenderConsumption() {
     roundToOneDecimal(baseFood * weatherState.foodFactor);
 
   weatherText.textContent = weatherState.text;
-  realPlaceText.textContent = weatherState.realPlace;
   factorText.textContent = weatherState.demandText;
 
   waterConsumptionText.textContent =
@@ -367,7 +365,7 @@ function loadInventory() {
   const savedInventory = localStorage.getItem(STORAGE_KEY_INVENTORY);
 
   if (!savedInventory) {
-    return structuredClone(defaultInventory);
+    return cloneDefaultInventory();
   }
 
   try {
@@ -380,10 +378,10 @@ function loadInventory() {
 
       return savedEntry
         ? { ...defaultEntry, amount: savedEntry.amount }
-        : defaultEntry;
+        : { ...defaultEntry };
     });
   } catch {
-    return structuredClone(defaultInventory);
+    return cloneDefaultInventory();
   }
 }
 
@@ -399,12 +397,6 @@ function loadParameters() {
 
     locationInput.value = parsedParameters.locationKey || "";
     groupSizeInput.value = parsedParameters.groupSize || "";
-
-    const selectedLocation = middleEarthLocations[parsedParameters.locationKey];
-
-    if (selectedLocation) {
-      realPlaceText.textContent = selectedLocation.realPlace;
-    }
   } catch {
     locationInput.value = "";
     groupSizeInput.value = "";
@@ -437,4 +429,8 @@ function roundToOneDecimal(value) {
 
 function capitalize(text) {
   return text.charAt(0).toUpperCase() + text.slice(1);
+}
+
+function cloneDefaultInventory() {
+  return defaultInventory.map((entry) => ({ ...entry }));
 }
