@@ -1,13 +1,46 @@
-// Trage hier deinen OpenWeather API Key ein.
-// Für ein echtes öffentliches Projekt sollte der Key nicht im Frontend stehen,
-// sondern über einen kleinen Backend-Proxy geschützt werden.
-const OPEN_WEATHER_API_KEY = "hier-kommt-dein-echter-api-key-rein";
+// Trage hier deinen echten OpenWeather API Key ein.
+const OPEN_WEATHER_API_KEY = "DEIN_OPENWEATHER_API_KEY";
 
 const STORAGE_KEY_INVENTORY = "inventar-interface-bestand-v1";
 const STORAGE_KEY_PARAMETERS = "inventar-interface-parameter-v1";
 
-const BASE_WATER_PER_PERSON = 3; // Liter pro Gefährte und Tag
-const BASE_FOOD_PER_PERSON = 2;  // Rationen pro Gefährte und Tag
+const BASE_WATER_PER_PERSON = 3; // 3 Liter Wasser pro Gefährte und Tag
+const BASE_FOOD_PER_PERSON = 2;  // 2 Rationen Nahrung pro Gefährte und Tag
+
+// Herr-der-Ringe-Orte werden mit realen Wetterorten verknüpft.
+// Die Koordinaten werden direkt für die OpenWeather API verwendet.
+const middleEarthLocations = {
+  shire: {
+    label: "Auenland / Hobbingen",
+    realPlace: "Matamata / Hobbiton, Neuseeland",
+    lat: -37.8721,
+    lon: 175.6829
+  },
+  rivendell: {
+    label: "Bruchtal",
+    realPlace: "Kaitoke Regional Park, Wellington, Neuseeland",
+    lat: -41.0833,
+    lon: 175.1667
+  },
+  mordor: {
+    label: "Mordor / Schicksalsberg",
+    realPlace: "Tongariro National Park, Neuseeland",
+    lat: -39.1568,
+    lon: 175.6321
+  },
+  rohan: {
+    label: "Rohan / Edoras",
+    realPlace: "Mount Sunday, Canterbury, Neuseeland",
+    lat: -43.5309,
+    lon: 170.8992
+  },
+  isengard: {
+    label: "Isengard",
+    realPlace: "Harcourt Park, Upper Hutt, Neuseeland",
+    lat: -41.1256,
+    lon: 175.0702
+  }
+};
 
 const defaultInventory = [
   { id: "water", label: "Wasser", icon: "💧", amount: 30, unit: "L", type: "item" },
@@ -28,6 +61,7 @@ let inventory = loadInventory();
 
 let weatherState = {
   text: "Noch nicht abgerufen",
+  realPlace: "Noch nicht ausgewählt",
   main: "Normal",
   waterFactor: 1,
   foodFactor: 1,
@@ -44,6 +78,7 @@ const saveInventoryButton = document.querySelector("#saveInventoryButton");
 const parameterHint = document.querySelector("#parameterHint");
 const saveHint = document.querySelector("#saveHint");
 const weatherText = document.querySelector("#weatherText");
+const realPlaceText = document.querySelector("#realPlaceText");
 const factorText = document.querySelector("#factorText");
 const waterConsumptionText = document.querySelector("#waterConsumptionText");
 const foodConsumptionText = document.querySelector("#foodConsumptionText");
@@ -63,24 +98,39 @@ groupSizeInput.addEventListener("input", () => {
   updateStatus();
 });
 
+locationInput.addEventListener("change", () => {
+  const selectedLocation = middleEarthLocations[locationInput.value];
+
+  if (selectedLocation) {
+    realPlaceText.textContent = selectedLocation.realPlace;
+  } else {
+    realPlaceText.textContent = "Noch nicht ausgewählt";
+  }
+});
+
 async function handleSaveParameters() {
-  const location = locationInput.value.trim();
+  const locationKey = locationInput.value;
+  const selectedLocation = middleEarthLocations[locationKey];
   const groupSize = Number(groupSizeInput.value);
 
-  if (!location || !Number.isInteger(groupSize) || groupSize < 1) {
-    parameterHint.textContent = "Bitte Standort und eine gültige Gruppengröße eingeben.";
+  if (!selectedLocation || !Number.isInteger(groupSize) || groupSize < 1) {
+    parameterHint.textContent = "Bitte Ort auswählen und eine gültige Gruppengröße eingeben.";
     return;
   }
 
-  saveParametersToStorage(location, groupSize);
-  parameterHint.textContent = "Wetter wird abgerufen ...";
+  saveParametersToStorage(locationKey, groupSize);
+  parameterHint.textContent = "Wetter wird über OpenWeather abgerufen ...";
 
   try {
-    const weatherData = await fetchWeather(location);
+    const weatherData = await fetchWeather(selectedLocation);
+
     weatherState = buildWeatherState(weatherData);
+
     calculateAndRenderConsumption();
     updateStatus();
-    parameterHint.textContent = `Parameter gespeichert. Wetterdaten für ${weatherData.place} wurden geladen.`;
+
+    parameterHint.textContent =
+      `Parameter gespeichert. Wetterdaten für ${selectedLocation.label} wurden geladen.`;
   } catch (error) {
     console.error(error);
     parameterHint.textContent = error.message;
@@ -107,7 +157,9 @@ function renderInventory() {
     const nameCell = document.createElement("div");
     nameCell.className = `item-name ${entry.type === "child" ? "child" : ""}`;
     nameCell.setAttribute("role", "cell");
-    nameCell.innerHTML = `${entry.icon ? `<span aria-hidden="true">${entry.icon}</span>` : ""}<span>${entry.label}</span>`;
+
+    nameCell.innerHTML =
+      `${entry.icon ? `<span aria-hidden="true">${entry.icon}</span>` : ""}<span>${entry.label}</span>`;
 
     const stockCell = document.createElement("div");
     stockCell.className = "stock-cell";
@@ -121,10 +173,20 @@ function renderInventory() {
       stockCell.textContent = "";
       actionsCell.textContent = "";
     } else {
-      stockCell.innerHTML = `<span id="stock-${entry.id}">${formatNumber(entry.amount)}</span> <span>${entry.unit}</span>`;
+      stockCell.innerHTML =
+        `<span id="stock-${entry.id}">${formatNumber(entry.amount)}</span> <span>${entry.unit}</span>`;
 
-      const minusButton = createActionButton("−", `Bestand von ${entry.label} verringern`, () => changeAmount(entry.id, -1));
-      const plusButton = createActionButton("+", `Bestand von ${entry.label} erhöhen`, () => changeAmount(entry.id, 1));
+      const minusButton = createActionButton(
+        "−",
+        `Bestand von ${entry.label} verringern`,
+        () => changeAmount(entry.id, -1)
+      );
+
+      const plusButton = createActionButton(
+        "+",
+        `Bestand von ${entry.label} erhöhen`,
+        () => changeAmount(entry.id, 1)
+      );
 
       actionsCell.append(minusButton, plusButton);
     }
@@ -136,11 +198,13 @@ function renderInventory() {
 
 function createActionButton(label, ariaLabel, onClick) {
   const button = document.createElement("button");
+
   button.className = "action-button";
   button.type = "button";
   button.textContent = label;
   button.setAttribute("aria-label", ariaLabel);
   button.addEventListener("click", onClick);
+
   return button;
 }
 
@@ -152,6 +216,7 @@ function changeAmount(id, step) {
   }
 
   item.amount = Math.max(0, item.amount + step);
+
   document.querySelector(`#stock-${id}`).textContent = formatNumber(item.amount);
 
   saveHint.textContent = "Änderung noch nicht gespeichert.";
@@ -159,42 +224,36 @@ function changeAmount(id, step) {
   updateStatus();
 }
 
-async function fetchWeather(location) {
+async function fetchWeather(selectedLocation) {
   if (!apiKeyIsConfigured()) {
     return {
-      place: `${location} (Demo, kein API-Key eingetragen)`,
+      fantasyPlace: selectedLocation.label,
+      realPlace: `${selectedLocation.realPlace} Demo-Modus, kein API-Key eingetragen`,
       main: "Clear",
       description: "sonnig"
     };
   }
 
-  const geoUrl = `https://api.openweathermap.org/geo/1.0/direct?q=${encodeURIComponent(location)}&limit=1&appid=${OPEN_WEATHER_API_KEY}`;
-  const geoResponse = await fetch(geoUrl);
+  const weatherUrl =
+    `https://api.openweathermap.org/data/2.5/weather` +
+    `?lat=${selectedLocation.lat}` +
+    `&lon=${selectedLocation.lon}` +
+    `&appid=${OPEN_WEATHER_API_KEY}` +
+    `&units=metric` +
+    `&lang=de`;
 
-  if (!geoResponse.ok) {
-    throw new Error("Der Standort konnte nicht in Koordinaten umgewandelt werden.");
-  }
-
-  const geoData = await geoResponse.json();
-
-  if (!Array.isArray(geoData) || geoData.length === 0) {
-    throw new Error("Der Standort wurde nicht gefunden. Bitte genauer eingeben, z. B. 'Wien, AT'.");
-  }
-
-  const { lat, lon, name, country } = geoData[0];
-
-  const weatherUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${OPEN_WEATHER_API_KEY}&units=metric&lang=de`;
   const weatherResponse = await fetch(weatherUrl);
 
   if (!weatherResponse.ok) {
-    throw new Error("Die Wetterdaten konnten nicht geladen werden. Prüfe bitte den API-Key.");
+    throw new Error("Die Wetterdaten konnten nicht geladen werden. Bitte prüfe deinen OpenWeather API-Key.");
   }
 
   const weatherData = await weatherResponse.json();
   const condition = weatherData.weather?.[0];
 
   return {
-    place: `${name}${country ? `, ${country}` : ""}`,
+    fantasyPlace: selectedLocation.label,
+    realPlace: selectedLocation.realPlace,
     main: condition?.main || "Normal",
     description: condition?.description || "normales Wetter"
   };
@@ -228,9 +287,7 @@ function buildWeatherState(weatherData) {
     foodFactor = 1;
     typeLabel = "Sonnig";
     demandText = "erhöhter Wasserbedarf";
-  }
-
-  if (isRainSnowOrThunderstorm) {
+  } else if (isRainSnowOrThunderstorm) {
     waterFactor = 1;
     foodFactor = 1.5;
     typeLabel = "Regen / Schnee / Gewitter";
@@ -239,6 +296,7 @@ function buildWeatherState(weatherData) {
 
   return {
     text: `${typeLabel}: ${capitalize(weatherData.description)}`,
+    realPlace: weatherData.realPlace,
     main: weatherData.main,
     waterFactor,
     foodFactor,
@@ -254,18 +312,29 @@ function calculateAndRenderConsumption() {
   const baseWater = groupSize * BASE_WATER_PER_PERSON;
   const baseFood = groupSize * BASE_FOOD_PER_PERSON;
 
-  weatherState.waterConsumption = roundToOneDecimal(baseWater * weatherState.waterFactor);
-  weatherState.foodConsumption = roundToOneDecimal(baseFood * weatherState.foodFactor);
+  weatherState.waterConsumption =
+    roundToOneDecimal(baseWater * weatherState.waterFactor);
+
+  weatherState.foodConsumption =
+    roundToOneDecimal(baseFood * weatherState.foodFactor);
 
   weatherText.textContent = weatherState.text;
+  realPlaceText.textContent = weatherState.realPlace;
   factorText.textContent = weatherState.demandText;
-  waterConsumptionText.textContent = `${formatNumber(weatherState.waterConsumption)} L`;
-  foodConsumptionText.textContent = `${formatNumber(weatherState.foodConsumption)} R`;
+
+  waterConsumptionText.textContent =
+    `${formatNumber(weatherState.waterConsumption)} L`;
+
+  foodConsumptionText.textContent =
+    `${formatNumber(weatherState.foodConsumption)} R`;
 }
 
 function updateStatus() {
-  const currentWaterStock = inventory.find((entry) => entry.id === "water")?.amount ?? 0;
-  const currentFoodStock = inventory.find((entry) => entry.id === "food")?.amount ?? 0;
+  const currentWaterStock =
+    inventory.find((entry) => entry.id === "water")?.amount ?? 0;
+
+  const currentFoodStock =
+    inventory.find((entry) => entry.id === "food")?.amount ?? 0;
 
   const requiredWaterForOneDay = weatherState.waterConsumption;
   const requiredFoodForOneDay = weatherState.foodConsumption;
@@ -276,7 +345,8 @@ function updateStatus() {
 
   if (groupSize < 1) {
     statusBox.classList.add("neutral");
-    statusText.textContent = "Bitte Gruppengröße eingeben, damit der Tagesverbrauch berechnet werden kann.";
+    statusText.textContent =
+      "Bitte Gruppengröße eingeben, damit der Tagesverbrauch berechnet werden kann.";
     return;
   }
 
@@ -304,8 +374,13 @@ function loadInventory() {
     const parsedInventory = JSON.parse(savedInventory);
 
     return defaultInventory.map((defaultEntry) => {
-      const savedEntry = parsedInventory.find((entry) => entry.id === defaultEntry.id);
-      return savedEntry ? { ...defaultEntry, amount: savedEntry.amount } : defaultEntry;
+      const savedEntry = parsedInventory.find(
+        (entry) => entry.id === defaultEntry.id
+      );
+
+      return savedEntry
+        ? { ...defaultEntry, amount: savedEntry.amount }
+        : defaultEntry;
     });
   } catch {
     return structuredClone(defaultInventory);
@@ -321,27 +396,39 @@ function loadParameters() {
 
   try {
     const parsedParameters = JSON.parse(savedParameters);
-    locationInput.value = parsedParameters.location || "";
+
+    locationInput.value = parsedParameters.locationKey || "";
     groupSizeInput.value = parsedParameters.groupSize || "";
+
+    const selectedLocation = middleEarthLocations[parsedParameters.locationKey];
+
+    if (selectedLocation) {
+      realPlaceText.textContent = selectedLocation.realPlace;
+    }
   } catch {
     locationInput.value = "";
     groupSizeInput.value = "";
   }
 }
 
-function saveParametersToStorage(location, groupSize) {
+function saveParametersToStorage(locationKey, groupSize) {
   localStorage.setItem(
     STORAGE_KEY_PARAMETERS,
-    JSON.stringify({ location, groupSize })
+    JSON.stringify({ locationKey, groupSize })
   );
 }
 
 function apiKeyIsConfigured() {
-  return OPEN_WEATHER_API_KEY && OPEN_WEATHER_API_KEY !== "DEIN_OPENWEATHER_API_KEY";
+  return (
+    OPEN_WEATHER_API_KEY &&
+    OPEN_WEATHER_API_KEY !== "DEIN_OPENWEATHER_API_KEY"
+  );
 }
 
 function formatNumber(value) {
-  return Number.isInteger(value) ? String(value) : value.toFixed(1).replace(".", ",");
+  return Number.isInteger(value)
+    ? String(value)
+    : value.toFixed(1).replace(".", ",");
 }
 
 function roundToOneDecimal(value) {
