@@ -6,8 +6,8 @@ const OPEN_WEATHER_API_KEY = "DEIN_OPENWEATHER_API_KEY";
 const STORAGE_KEY_INVENTORY = "inventar-interface-bestand-v1";
 const STORAGE_KEY_PARAMETERS = "inventar-interface-parameter-v1";
 
-const BASE_WATER_PER_PERSON = 3; // Liter pro Person und Tag
-const BASE_FOOD_PER_PERSON = 3;  // Rationen pro Person und Tag
+const BASE_WATER_PER_PERSON = 3; // Liter pro Gefährte und Tag
+const BASE_FOOD_PER_PERSON = 2;  // Rationen pro Gefährte und Tag
 
 const defaultInventory = [
   { id: "water", label: "Wasser", icon: "💧", amount: 30, unit: "L", type: "item" },
@@ -25,11 +25,13 @@ const defaultInventory = [
 ];
 
 let inventory = loadInventory();
+
 let weatherState = {
   text: "Noch nicht abgerufen",
   main: "Normal",
   waterFactor: 1,
   foodFactor: 1,
+  demandText: "normaler Wasser- und Nahrungsbedarf",
   waterConsumption: 0,
   foodConsumption: 0
 };
@@ -55,6 +57,7 @@ updateStatus();
 
 saveParametersButton.addEventListener("click", handleSaveParameters);
 saveInventoryButton.addEventListener("click", handleSaveInventory);
+
 groupSizeInput.addEventListener("input", () => {
   calculateAndRenderConsumption();
   updateStatus();
@@ -150,7 +153,9 @@ function changeAmount(id, step) {
 
   item.amount = Math.max(0, item.amount + step);
   document.querySelector(`#stock-${id}`).textContent = formatNumber(item.amount);
+
   saveHint.textContent = "Änderung noch nicht gespeichert.";
+
   updateStatus();
 }
 
@@ -177,6 +182,7 @@ async function fetchWeather(location) {
   }
 
   const { lat, lon, name, country } = geoData[0];
+
   const weatherUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${OPEN_WEATHER_API_KEY}&units=metric&lang=de`;
   const weatherResponse = await fetch(weatherUrl);
 
@@ -201,25 +207,34 @@ function buildWeatherState(weatherData) {
   let waterFactor = 1;
   let foodFactor = 1;
   let typeLabel = "Normales Wetter";
+  let demandText = "normaler Wasser- und Nahrungsbedarf";
 
-  if (main.includes("clear") || description.includes("sonn")) {
-    waterFactor = 2;
-    foodFactor = 1;
-    typeLabel = "Sonne";
-  }
+  const isSunny =
+    main.includes("clear") ||
+    description.includes("sonn");
 
-  if (
+  const isRainSnowOrThunderstorm =
     main.includes("rain") ||
     main.includes("drizzle") ||
     main.includes("snow") ||
     main.includes("thunderstorm") ||
     description.includes("regen") ||
+    description.includes("niesel") ||
     description.includes("schnee") ||
-    description.includes("gewitter")
-  ) {
+    description.includes("gewitter");
+
+  if (isSunny) {
+    waterFactor = 2;
+    foodFactor = 1;
+    typeLabel = "Sonnig";
+    demandText = "erhöhter Wasserbedarf";
+  }
+
+  if (isRainSnowOrThunderstorm) {
     waterFactor = 1;
     foodFactor = 1.5;
-    typeLabel = "Regen / Schnee";
+    typeLabel = "Regen / Schnee / Gewitter";
+    demandText = "erhöhter Nahrungsbedarf";
   }
 
   return {
@@ -227,6 +242,7 @@ function buildWeatherState(weatherData) {
     main: weatherData.main,
     waterFactor,
     foodFactor,
+    demandText,
     waterConsumption: 0,
     foodConsumption: 0
   };
@@ -234,6 +250,7 @@ function buildWeatherState(weatherData) {
 
 function calculateAndRenderConsumption() {
   const groupSize = Number(groupSizeInput.value) || 0;
+
   const baseWater = groupSize * BASE_WATER_PER_PERSON;
   const baseFood = groupSize * BASE_FOOD_PER_PERSON;
 
@@ -241,7 +258,7 @@ function calculateAndRenderConsumption() {
   weatherState.foodConsumption = roundToOneDecimal(baseFood * weatherState.foodFactor);
 
   weatherText.textContent = weatherState.text;
-  factorText.textContent = `Wasser ×${formatFactor(weatherState.waterFactor)} / Nahrung ×${formatFactor(weatherState.foodFactor)}`;
+  factorText.textContent = weatherState.demandText;
   waterConsumptionText.textContent = `${formatNumber(weatherState.waterConsumption)} L`;
   foodConsumptionText.textContent = `${formatNumber(weatherState.foodConsumption)} R`;
 }
@@ -249,8 +266,10 @@ function calculateAndRenderConsumption() {
 function updateStatus() {
   const currentWaterStock = inventory.find((entry) => entry.id === "water")?.amount ?? 0;
   const currentFoodStock = inventory.find((entry) => entry.id === "food")?.amount ?? 0;
+
   const requiredWaterForOneDay = weatherState.waterConsumption;
   const requiredFoodForOneDay = weatherState.foodConsumption;
+
   const groupSize = Number(groupSizeInput.value) || 0;
 
   statusBox.classList.remove("ok", "warning", "neutral");
@@ -261,9 +280,6 @@ function updateStatus() {
     return;
   }
 
-  // Warnung genau nach dem Flowchart:
-  // Wenn der berechnete Tagesbedarf höher ist als der aktuelle Bestand,
-  // dann Vorräte auffüllen. Sonst sind die Vorräte ausreichend.
   const needsMoreWater = requiredWaterForOneDay > currentWaterStock;
   const needsMoreFood = requiredFoodForOneDay > currentFoodStock;
 
@@ -286,6 +302,7 @@ function loadInventory() {
 
   try {
     const parsedInventory = JSON.parse(savedInventory);
+
     return defaultInventory.map((defaultEntry) => {
       const savedEntry = parsedInventory.find((entry) => entry.id === defaultEntry.id);
       return savedEntry ? { ...defaultEntry, amount: savedEntry.amount } : defaultEntry;
@@ -325,10 +342,6 @@ function apiKeyIsConfigured() {
 
 function formatNumber(value) {
   return Number.isInteger(value) ? String(value) : value.toFixed(1).replace(".", ",");
-}
-
-function formatFactor(value) {
-  return String(value).replace(".", ",");
 }
 
 function roundToOneDecimal(value) {
