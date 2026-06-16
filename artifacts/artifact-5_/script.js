@@ -1,7 +1,7 @@
 // Trage hier deinen OpenWeather API Key ein.
 // Für ein echtes öffentliches Projekt sollte der Key nicht im Frontend stehen,
 // sondern über einen kleinen Backend-Proxy geschützt werden.
-const OPEN_WEATHER_API_KEY = "DEIN_OPENWEATHER_API_KEY";
+const OPEN_WEATHER_API_KEY = "hier-kommt-dein-echter-api-key-rein";
 
 const STORAGE_KEY_INVENTORY = "inventar-interface-bestand-v1";
 const STORAGE_KEY_PARAMETERS = "inventar-interface-parameter-v1";
