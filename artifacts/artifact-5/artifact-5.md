@@ -29,15 +29,15 @@ Das Feature haben wir bereits in Artifact-2 ausführlich dargestellt und beschri
 
 ## Design Rationale
 
-### Why does this support the intent and value defined in artifact 1?
+### How the integrated system still reflects the original intent and value?
 Weil die gesamte Gruppe in Echtzeit benachrichtigt wird, wenn es jemandem aus der Gruppe schlecht geht. Vor allem der besondere Alarm, wenn der Ringträger betroffen ist, ist hilfreich, denn ohne Ring macht die ganze Reise keinen Sinn mehr. 
 
-### How does it reflect the wireframe of artifact 2?
+### How individual slices connect meaningfully?
 Das ursprüngliche Wireframe war für eine mobile Ansicht gemacht. Als wir jetzt das Interface gebaut haben, haben wir uns für ein responsive CSS-Design entschieden, damit es auf großen Bildschirmen angenehmer zu lesen ist. Auf einem mobilen Gerät, sieht es aus wie das Wireframe. 
 
-### What die we deliberately not implement yet?
+### Why your chosen extension makes sense?
 Die Karte haben wir bewusst noch einfach gehalten und nur die nötigsten Interaktionsmöglichkeiten eingebaut. Wir sind für das Interface auch davon ausgegangen, dass der Ring-Alarm bereits ausgelöst ist. Es besteht also noch keine echte Anbindung an die Datenquelle (Statusmessung über Zustand der Gruppenmitglieder). Der Button zum Ausschalten des Alarms deaktiviert den Alarm. Zur Darstellung wie die Karte im Einsatz funktionieren würde haben wir den Button "zum Ziel bewegen" eingebaut, der zeigt wie sich die Marker auf der Karte und die Entfernungsanzeige verhalten würden. Für den jetzigen Stand haben wir auch bewusst noch keinen Sound für den Alarm hinterlegt, sondern nur visuell die Dringlichkeit mit Effekten dargestellt. 
 
-### What assumptions or constraints shaped our decision?
+### What you intentionally did not build?
 Da wir noch keine Testpersonen haben, deren Zustand wir messen können, mussten wir für den aktuellen Part davon ausgehen, dass ein kritischer Zustand bereits eingetreten ist und der Alarm ausgelöst wurde. Für die fertige Version ist es nötig, dass alle Gefährten ein magisches Armband tragen, dass rund um die Uhr ihren Zustand trackt. Dieser Umstand ist im aktuellen Stadium der Entwicklung aber einfach noch nicht darstellbar. 
 
