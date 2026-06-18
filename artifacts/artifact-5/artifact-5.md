@@ -9,15 +9,13 @@
 ---
 
 ## Selected Capability
-Gruppenstatus – Gesundheits- & Standorttracking - Ring Alarm
+Inventar
 
-Das Feature haben wir bereits in Artifact-2 ausführlich dargestellt und beschrieben. Es trackt laufend den Status der einzelnen Gruppenmitglieder und benachrichtigt die Gruppe wenn bei jemandem ein kritischer Zustand eintritt. Ist der Ringträger betroffen, erfolgt ein besonderer Alarm an alle. Wir haben die Basis von Artifact 3 nun um Javascript erweitert. Der Fokus liegt auf dem ausgelösten Ring Alarm. Der User sieht, warum der Alarm ausgelöst wurde und erhält gleichzeitig eine Standortinfo vom Ringträger, was eine Navigation zu ihm ermöglicht. Der Alarm lätuet so lange bis er von User aktiv ausgeschaltet wird. 
-
-[Details](../artifact-2_Group-Status/Artifact-2_Group-Status.md)
+Mindestens genauso wichtig wie der Überblick über die Gruppe, ist der Überblick über unsere Vorräte. Eine große Gruppe benötigt viele Vorräte, von Nahrung und Wasser über Kleidung, Rüstung, Waffen und vieles mehr. Da verliert man schnell den Überblick. Der Companion soll hier Abhilfe schaffen, indem jederzeit der aktuelle Stand von allen Vorräten abrufbar ist. Eine zusätzliche Funktion ist die automatische Berechnung des Wasser- und Nahrungsbedarfes für einen Tag anhand des aktuellen Wetters. Dazu wurde die OpenWeather API angebunden, die die Wetterdaten der tatsächlichen Herr der Ringe Drehorte immer aktuell zur Verfügung stellt. 
 
 ---
 
-## Logical Interface
+## Flow, Wireframe and Logical Interface - noch anpassen, Flow und Wireframe auch noch verlinken
 
 [HTML-Interface](src/interface.html)
 
@@ -30,14 +28,14 @@ Das Feature haben wir bereits in Artifact-2 ausführlich dargestellt und beschri
 ## Design Rationale
 
 ### How the integrated system still reflects the original intent and value?
-Weil die gesamte Gruppe in Echtzeit benachrichtigt wird, wenn es jemandem aus der Gruppe schlecht geht. Vor allem der besondere Alarm, wenn der Ringträger betroffen ist, ist hilfreich, denn ohne Ring macht die ganze Reise keinen Sinn mehr. 
+Unser Plan war es ursprünglich, dass die Gruppe immer einen Überblick über ihre Vorräte haben soll. Mit dem gebauten Inventar im Companion wird das sichergestellt. Jeder kann jederzeit den aktuellen Stand abrufen und Entnahmen sowie Einlagerungen tätigen.  
 
 ### How individual slices connect meaningfully?
-Das ursprüngliche Wireframe war für eine mobile Ansicht gemacht. Als wir jetzt das Interface gebaut haben, haben wir uns für ein responsive CSS-Design entschieden, damit es auf großen Bildschirmen angenehmer zu lesen ist. Auf einem mobilen Gerät, sieht es aus wie das Wireframe. 
+Wir hatten einen ungefähren Plan was unser Inventar können muss. Darauf basierend haben wir einen einfachen Mermaid Flow erstellt und das ungefähre Interface in einem Wireframe skizziert. Dabei war uns wichtig gleich eine Desktopansicht und auch eine mobile Ansicht zu berücksichtigen. Basierend darauf haben wir das finale Interface und die zugehörige Logik implementiert. 
 
 ### Why your chosen extension makes sense?
-Die Karte haben wir bewusst noch einfach gehalten und nur die nötigsten Interaktionsmöglichkeiten eingebaut. Wir sind für das Interface auch davon ausgegangen, dass der Ring-Alarm bereits ausgelöst ist. Es besteht also noch keine echte Anbindung an die Datenquelle (Statusmessung über Zustand der Gruppenmitglieder). Der Button zum Ausschalten des Alarms deaktiviert den Alarm. Zur Darstellung wie die Karte im Einsatz funktionieren würde haben wir den Button "zum Ziel bewegen" eingebaut, der zeigt wie sich die Marker auf der Karte und die Entfernungsanzeige verhalten würden. Für den jetzigen Stand haben wir auch bewusst noch keinen Sound für den Alarm hinterlegt, sondern nur visuell die Dringlichkeit mit Effekten dargestellt. 
+Die Anbindung von aktuellen Wetterdaten macht deshalb Sinn, weil je nach Wetterlage und Temperatur eine unterschiedliche Menge an Wasser und Nahrung benötigt wird. Damit unser Inventarsystem den Tagesbedarf berechnen kann, benötigt es daher immer aktuelle Wetterdaten. Dadurch wird sichergestellt, dass die Gruppe rechtzeitig gewarnt wird, wenn Vorräte knapp werden. Auch für künftig geplante Updates ist die API sehr sinnvoll, da anhand der Wetterdaten zum Beispiel auch Empfehlungen zur optimalen Ausrüstung (Regenschutz, Wintermäntel, etc.) gegeben werden können.  
 
 ### What you intentionally did not build?
-Da wir noch keine Testpersonen haben, deren Zustand wir messen können, mussten wir für den aktuellen Part davon ausgehen, dass ein kritischer Zustand bereits eingetreten ist und der Alarm ausgelöst wurde. Für die fertige Version ist es nötig, dass alle Gefährten ein magisches Armband tragen, dass rund um die Uhr ihren Zustand trackt. Dieser Umstand ist im aktuellen Stadium der Entwicklung aber einfach noch nicht darstellbar. 
+Ursprünglich haben wir auch geplant, dass sich jedes Gruppenmitglied persönliche Favoriten anlegen kann um diese immer schnell im Überblick zu haben. Wir haben uns aber bewusst dafür entschieden, diese Funktion in der aktuellen Version noch nicht einzubauen, um nicht zu komplex zu werden. Die anderen Funktionen waren uns für diese Version des Inventars wichtiger. Fürs erste Design haben wir für Entnahmen/Einlagen nur +/- Buttons verwendet und uns vorerst gegen Zahlenfelder entschieden. Uns ist aber bewusst, dass das bei großen Entnahmen oder Einlagerungen mühsam werden kann. 
 
