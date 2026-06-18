@@ -1,5 +1,5 @@
 // Trage hier deinen echten OpenWeather API-Key ein.
-const OPEN_WEATHER_API_KEY = "DEIN_OPENWEATHER_API_KEY";
+const OPEN_WEATHER_API_KEY = "cf116e749aa62767c6001ce6f801d4c9";
 
 const STORAGE_KEY_INVENTORY = "inventar-interface-bestand-v1";
 
