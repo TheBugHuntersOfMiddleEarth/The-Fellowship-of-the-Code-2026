@@ -1,1 +1,95 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inventar Interface</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
 
+<body>
+  <main class="app-shell">
+    <header class="app-header">
+      <button class="back-button" type="button" aria-label="Zurück">←</button>
+      <h1>[ Inventar ]</h1>
+      <button class="menu-button" type="button" aria-label="Menü">☰</button>
+    </header>
+
+    <section class="dashboard">
+      <section class="card">
+        <h2>Reiseparameter</h2>
+
+        <div class="form-grid">
+          <label for="locationInput">Ort:</label>
+          <select id="locationInput" autocomplete="off">
+            <option value="">Bitte Ort auswählen</option>
+            <option value="shire">Auenland</option>
+            <option value="rivendell">Bruchtal</option>
+            <option value="mordor">Mordor</option>
+            <option value="rohan">Rohan</option>
+            <option value="isengard">Isengard</option>
+          </select>
+
+          <label for="groupSizeInput">Gefährten:</label>
+          <input
+            id="groupSizeInput"
+            type="number"
+            min="1"
+            placeholder="Bitte Anzahl der Gefährten eingeben"
+            autocomplete="off"
+          >
+        </div>
+
+        <button id="saveParametersButton" class="primary-button" type="button">
+          Parameter speichern
+        </button>
+
+        <p id="parameterHint" class="hint"></p>
+      </section>
+
+      <section class="card">
+        <h2>Wetterlage & berechneter Verbrauch</h2>
+
+        <ul class="weather-list">
+          <li>🌦️ Wetter: <strong id="weatherText">Noch nicht abgerufen</strong></li>
+          <li>⌛ Bedarfslage: <strong id="factorText">normaler Wasser- und Nahrungsbedarf</strong></li>
+          <li>💧 Berechneter Wasserverbrauch: <strong id="waterConsumptionText">0 L</strong></li>
+          <li>🍞 Berechneter Nahrungsverbrauch: <strong id="foodConsumptionText">0 R</strong></li>
+        </ul>
+      </section>
+
+      <section class="ration-status">
+        <h2>Rationen-Status</h2>
+
+        <div id="statusBox" class="status-box neutral">
+          <span class="status-dot" aria-hidden="true"></span>
+          <span id="statusText">
+            Bitte Gruppengröße eingeben, damit der Tagesverbrauch berechnet werden kann.
+          </span>
+        </div>
+      </section>
+
+      <section class="inventory-card">
+        <h2>Ausrüstung & Inventar verwalten</h2>
+
+        <div class="inventory-table" role="table" aria-label="Inventar">
+          <div class="table-row table-header" role="row">
+            <div role="columnheader">Gegenstand / Kategorie</div>
+            <div role="columnheader">Aktueller Bestand</div>
+            <div role="columnheader">Aktionen</div>
+          </div>
+
+          <div id="inventoryRows"></div>
+        </div>
+
+        <button id="saveInventoryButton" class="save-button" type="button">
+          💾 Bestand sichern
+        </button>
+
+        <p id="saveHint" class="hint"></p>
+      </section>
+    </section>
+  </main>
+</body>
+</html>
