@@ -14,23 +14,15 @@
 
 ## Summary
 
-*`Adapt to your project...`*
-
-This chapter focuses on **[one specific requirement or artifact]** of The Fellowship Companion.
-It shows **what was added, why it was added, and how it fits into the larger system**.
+Dieses Kapitel fokussiert sich auf Artifact 5 des Fellowship Companions. Wir haben dafür ein zweites Feature von Grund auf neu gestaltet, also vom Flow bis zur Logik. Wir haben uns dabei für ein einfaches Inventarsystem mit Vorratsberechnung entschieden. 
 
 **Learning Outcomes**
 
-- Understand [concept / skill of the phase]
-- Apply [tool / language / logic] to build [artifact]
-- Reflect on AI-assisted development and decision-making
-- Contribute to a **shared, evolving system**
+Wir konnten dabei alles, was wir in den vorherigen Kapiteln bereits einmal gemacht haben, nochmals vertiefen. Dementsprechend kamen wir auch viel schneller und einfacher zu einem Ergebnis. 
 
 ---
 
 ## Artifact
-
-*`Adapt to your project...`*
 
 **File:** `[Name](Link)`
 
@@ -38,27 +30,17 @@ It shows **what was added, why it was added, and how it fits into the larger sys
 
 ... [requirements document / Mermaid flow / wireframe / HTML + CSS page / JavaScript page / low-code extension]
 
-**Focus:**
-
-... [specific feature of the system / requirement addressed]
 
 ---
 
 ## AI Assistance
 
-*`Adapt to your project...`*
-
-- What did I expect?
-- What actually happened?
-- How did AI help or mislead me?
-- What decision (changes) did I make consciously?
-- What would I do differently next time?
+Die KI konnte uns wie auch vorher sehr gut beim Schreiben des Codes unterstützen, hat aber auch wieder viele kleine Fehler im Detail gemacht. Man muss also schon wissen, was man tut um diese Fehler zu erkennen und zu beseitigen. Da wir aber bereits aus den vorherigen Abgaben einige Erfahrungen mitnehmen konnten, sind wir auch mit der KI schneller zu besseren Ergebnissen gekommen, da wir bereits wussten, worauf wir achten müssen. 
 
 ---
 
 ## Lessons Learned
 
-*`Adapt to your project...`*
-
-- Insights, challenges, reflections
+- neu gelernt haben wir, wie man eine API in den Code einbindet
+- keine API Keys auf GitGub veröffentlichen! (löschen wir dann nach der Abgabe wieder raus)
 
