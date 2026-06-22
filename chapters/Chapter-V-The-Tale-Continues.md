@@ -24,12 +24,7 @@ Wir konnten dabei alles, was wir in den vorherigen Kapiteln bereits einmal gemac
 
 ## Artifact
 
-**File:** `[Name](Link)`
-
-**Build:**
-
-... [requirements document / Mermaid flow / wireframe / HTML + CSS page / JavaScript page / low-code extension]
-
+[Artifact-5](artifacts/artifact-5/artifact-5.md)
 
 ---
 
