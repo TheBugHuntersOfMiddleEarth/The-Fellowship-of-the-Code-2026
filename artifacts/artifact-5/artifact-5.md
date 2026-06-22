@@ -17,11 +17,11 @@ Mindestens genauso wichtig wie der Überblick über die Gruppe, ist der Überbli
 
 ## Flow, Wireframe and Logical Interface - noch anpassen, Flow und Wireframe auch noch verlinken
 
-[HTML-Interface](src/interface.html)
+[HTML-Interface](src/index.html)
 
 [CSS-Style-Sheet](src/style.css)
 
-[Javascript](src/logic.js)
+[Javascript](src/script.js)
 
 ---
 
