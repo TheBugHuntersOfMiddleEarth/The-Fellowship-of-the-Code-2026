@@ -24,7 +24,7 @@ Wir konnten dabei alles, was wir in den vorherigen Kapiteln bereits einmal gemac
 
 ## Artifact
 
-[Artifact-5](artifacts/artifact-5/artifact-5.md)
+[Artifact-5](../artifacts/artifact-5/artifact-5.md)
 
 ---
 
