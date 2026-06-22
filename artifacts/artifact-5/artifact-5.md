@@ -17,6 +17,10 @@ Mindestens genauso wichtig wie der Überblick über die Gruppe, ist der Überbli
 
 ## Flow, Wireframe and Logical Interface - noch anpassen, Flow und Wireframe auch noch verlinken
 
+[Flow](src/flowchart-system.mermaid.md)
+
+[Wireframe](src/wireframe-system.png)
+
 [HTML-Interface](src/index.html)
 
 [CSS-Style-Sheet](src/style.css)
