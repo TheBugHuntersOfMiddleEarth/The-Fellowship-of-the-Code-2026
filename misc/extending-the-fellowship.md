@@ -4,7 +4,6 @@
 
 **Table of Contents**
 
-- [Application Synthesis-Extending the Fellowship](#Application Synthesis-Extending the Fellowship)
   - [Power Automate](#Power-Automate)
   - [Hobbit Game](#Steal-the-orcs-food)
 
