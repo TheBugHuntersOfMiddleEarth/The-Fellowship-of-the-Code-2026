@@ -6,7 +6,7 @@
 
 - [Application Synthesis - Extending the Fellowship](#Application Synthesis - Extending the Fellowship)
   - [Power Automate](#Issue-I)
-  - [Hobbit Game](#Issue-II)
+  - [Hobbit Game](#Steal-the-orcs-food)
 
 ---
 
