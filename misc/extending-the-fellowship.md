@@ -1,6 +1,7 @@
 # Application Synthesis - Extending the Fellowship
 
-*Zitat*
+*"Ich kenne Deinen Schmerz. Es ist dieselbe Last, die auf Dir liegt.
+Komm, Frodo. Wir bringen ihn zu Ende." (Samweis Gamdschie)*
 
 **Table of Contents**
 
@@ -11,9 +12,9 @@
 
 ## Power Automate
 
-Nico ergänzt die Beschreibung
+Zur Erstellung des Flows haben wir verschiedene Auslöser ausprobiert. Die erste Idee ("Das Auge Saurons :eye:") war es, auf eine vom Lektor erstellten Kanalnachricht automatisiert mit einer Warnung (" :warning: The Fellowship has detected danger. Aragorn :dagger_knife: should review the path!") zu antworten. Trotz mehrerer Versuche und Tests konnte der automatisierte Cloud-Flow nicht erfolgreich umgesetztz werden.
 
-Screenshot und evtl. Link zum Code wenn möglich
+Der nun entwickelte Flow ("TFoTC_ADaD-S26_CodeReview-Datei") prüft ob eine neue Datei auf SharePoint in einem vordefinierten Ordner erstellt oder geändert wurde. Sofern dies zutrifft, wird an die vordefinierten Gefährten (Team-Mitglieder "The Bug Hunters of Middle Earth") eine E-Mail versendet.
 
 ---
 
