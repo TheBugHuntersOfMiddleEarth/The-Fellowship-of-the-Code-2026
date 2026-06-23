@@ -14,7 +14,9 @@ Komm, Frodo. Wir bringen ihn zu Ende." (Samweis Gamdschie)*
 
 Zur Erstellung des Flows haben wir verschiedene Auslöser ausprobiert. Die erste Idee ("Das Auge Saurons :eye:") war es, auf eine vom Lektor erstellten Kanalnachricht automatisiert mit einer Warnung (" :warning: The Fellowship has detected danger. Aragorn :dagger: should review the path!") zu antworten. Trotz mehrerer Versuche und Tests konnte der automatisierte Cloud-Flow nicht erfolgreich umgesetztz werden.
 
-Der nun entwickelte Flow ("TFoTC_ADaD-S26_CodeReview-Datei") prüft ob eine neue Datei auf SharePoint in einem vordefinierten Ordner erstellt oder geändert wurde. Sofern dies zutrifft, wird an die vordefinierten Gefährten (Team-Mitglieder "The Bug Hunters of Middle Earth") eine E-Mail versendet.
+Der nun entwickelte Flow ("TFoTC_ADaD-S26_CodeReview-Datei") prüft ob eine neue Datei auf SharePoint in einem vordefinierten Ordner erstellt oder geändert wurde. Sofern dies zutrifft, wird an die vordefinierten Gefährten (Team-Mitglieder "The Bug Hunters of Middle Earth") eine E-Mail versendet. 
+
+Zur Ansicht haben wir je einen Screenshot vom [Auslöser](#misc/attachement/2026-06-23_1_Flow-Auslöser.jpg) sowie von der [Aktion](#misc/attachement/2026-06-23_2_Flow-Aktion.jpg) und vom [Test](#misc/attachement/2026-06-23_3_Flow-Test.jpg) hinterlegt.
 
 ---
 
@@ -28,8 +30,4 @@ Solange man im Browser bleibt, speichert das Game auch den Highscore und man kan
 
 [Link zum Spiel](https://arcade.makecode.com/S48836-31204-34613-42248)
 
-
-
 ---
-
-
