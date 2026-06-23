@@ -6,7 +6,7 @@ Komm, Frodo. Wir bringen ihn zu Ende." (Samweis Gamdschie)*
 **Table of Contents**
 
   - [Power Automate](#Power-Automate)
-  - [Hobbit Game](#Steal-the-orcs-food)
+  - [Steal the orcs food](#Steal-the-orcs-food)
 
 ---
 
