@@ -16,7 +16,7 @@ Zur Erstellung des Flows haben wir verschiedene Auslöser ausprobiert. Die erste
 
 Der nun entwickelte Flow ("TFoTC_ADaD-S26_CodeReview-Datei") prüft ob eine neue Datei auf SharePoint in einem vordefinierten Ordner erstellt oder geändert wurde. Sofern dies zutrifft, wird an die vordefinierten Gefährten (Team-Mitglieder "The Bug Hunters of Middle Earth") eine E-Mail versendet. 
 
-Zur Ansicht haben wir je einen Screenshot vom [Auslöser](attachement/2026-06-23_1_Flow-Auslöser.jpg) sowie von der [Aktion](misc/attachement/2026-06-23_2_Flow-Aktion.jpg) und vom [Test](/attachement/2026-06-23_3_Flow-Test.jpg) hinterlegt.
+Zur Ansicht haben wir je einen Screenshot vom [Auslöser](attachement/2026-06-23_1_Flow-Auslöser.jpg) sowie von der [Aktion](attachement/2026-06-23_2_Flow-Aktion.jpg) und vom [Test](attachement/2026-06-23_3_Flow-Test.jpg) hinterlegt.
 
 ---
 
