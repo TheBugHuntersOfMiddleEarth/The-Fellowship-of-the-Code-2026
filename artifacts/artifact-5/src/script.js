@@ -1,5 +1,5 @@
 
-const OPEN_WEATHER_API_KEY = "cf116e749aa62767c6001ce6f801d4c9";
+const OPEN_WEATHER_API_KEY = "meinKey";
 
 const STORAGE_KEY_INVENTORY = "inventar-interface-bestand-v1";
 
